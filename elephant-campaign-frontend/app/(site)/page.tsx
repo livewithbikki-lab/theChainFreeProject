@@ -19,7 +19,7 @@ export default function HomePage() {
     <>
       <section className="hero">
         <div className="hero-bg">
-          <img src="/hero.jpg" alt="" />
+          <img src="/hero-top.jpg" alt="" />
         </div>
         <div className="container hero-content">
           <p className="hero-kicker">{SITE.location}</p>

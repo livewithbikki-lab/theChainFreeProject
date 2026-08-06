@@ -32,8 +32,7 @@ export const CAMPAIGN = {
   elephantLabel: "Rescue candidate (details soon)",
 };
 
-/** Only photos that frame well — used sparingly */
-export const PHOTOS = {
+const PHOTOS = {
   hero: "/hero.jpg",
   care: "/care-1.jpg",
   careB: "/care-2.jpg",
@@ -88,7 +87,7 @@ export const EXPERIENCES = [
     time: "Depends on weather and river",
     duration: "About 1 hour",
     price: "Price on request",
-    image: PHOTOS.hero,
+    image: "/hero.jpg",
     intro:
       "Watch elephants bathe in the river. You can stay back and observe, or join scrubbing only if the team says it is safe and wanted that day.",
     activities: [
@@ -136,7 +135,7 @@ export const EXPERIENCES = [
 ] as const;
 
 export const GALLERY_ITEMS = [
-  { src: PHOTOS.hero, title: "River", caption: "Bath and rest time." },
+  { src: "/hero.jpg", title: "River", caption: "Bath and rest time." },
   { src: PHOTOS.care, title: "Feeding", caption: "Daily care." },
   { src: PHOTOS.careB, title: "On site", caption: "Room to move." },
   { src: PHOTOS.careC, title: "With the team", caption: "Calm visits only." },
@@ -157,20 +156,16 @@ export const PROBLEM_PHOTOS = [
 
 export const VALUES = [
   {
-    title: "No riding",
-    text: "Visitors stay on the ground. Walks, feeding, and watching only.",
-  },
-  {
-    title: "No chains when we can help it",
-    text: "We work toward freer movement and rest — not standing locked for hours.",
+    title: "No riding, no chains",
+    text: "Visitors stay on the ground. We work toward freer movement and rest — not rides or hours locked in place.",
   },
   {
     title: "Fees fund care",
-    text: "Money from ethical programs goes directly to elephant welfare and the sanctuary fund.",
+    text: "Money from ethical programs goes to elephant welfare and the sanctuary fund.",
   },
   {
     title: "Mahouts keep work",
-    text: "Local handlers stay employed. Better training, better conditions — not cutting people out.",
+    text: "Local handlers stay employed. Better training and conditions — not cutting people out.",
   },
 ] as const;
 

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { getApiUrl } from '@/lib/api';
 
 export default function VolunteerForm() {
   const [formType, setFormType] = useState<'volunteer' | 'booking'>('volunteer');
@@ -41,13 +42,8 @@ export default function VolunteerForm() {
       date: formData.type === 'booking' ? formData.date : null,
     };
 
-    const baseApiUrl = process.env.NEXT_PUBLIC_API_URL;
-    const isMissingEnv =
-      !baseApiUrl || baseApiUrl === 'undefined' || baseApiUrl.trim() === '';
-    const apiUrl = isMissingEnv ? 'http://localhost:8000/api' : baseApiUrl;
-
     try {
-      const response = await fetch(`${apiUrl}/volunteer`, {
+      const response = await fetch(`${getApiUrl()}/volunteer`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -76,11 +72,7 @@ export default function VolunteerForm() {
         }
       }
     } catch {
-      alert(
-        isMissingEnv
-          ? 'Could not reach the server. API URL is not configured.'
-          : 'Could not reach the server. Please try again later.'
-      );
+      alert('Could not reach the server. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }

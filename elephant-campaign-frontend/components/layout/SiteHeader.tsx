@@ -2,16 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { NAV_ITEMS, SITE } from '@/lib/content';
 
 export default function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
 
   const active = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href);
@@ -19,7 +15,7 @@ export default function SiteHeader() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Link href="/" className="logo">
+        <Link href="/" className="logo" onClick={() => setOpen(false)}>
           {SITE.name}
           <span>{SITE.location}</span>
         </Link>
@@ -54,6 +50,7 @@ export default function SiteHeader() {
               key={item.href}
               href={item.href}
               className={active(item.href) ? 'is-active' : undefined}
+              onClick={() => setOpen(false)}
             >
               {item.label}
             </Link>

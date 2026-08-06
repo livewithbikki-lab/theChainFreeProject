@@ -1,9 +1,18 @@
-import SiteShell from "@/components/layout/SiteShell";
+import SiteHeader from "@/components/layout/SiteHeader";
+import SiteFooter from "@/components/layout/SiteFooter";
+import ContactChannels from "@/components/ContactChannels";
 
 export default function SiteLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <SiteShell>{children}</SiteShell>;
+  return (
+    <>
+      <SiteHeader />
+      <main>{children}</main>
+      <SiteFooter />
+      <ContactChannels floating />
+    </>
+  );
 }

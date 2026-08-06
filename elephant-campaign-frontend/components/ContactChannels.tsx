@@ -83,7 +83,7 @@ export default function ContactChannels({ floating = false }: Props) {
 
         <button
           type="button"
-          className={`float-btn float-chat${open ? ' is-open' : ''}`}
+          className={`float-btn${open ? ' is-open' : ''}`}
           aria-expanded={open}
           aria-haspopup="menu"
           aria-label={open ? 'Close chat options' : 'Chat options'}

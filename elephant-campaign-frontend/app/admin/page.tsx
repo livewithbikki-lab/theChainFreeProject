@@ -2,16 +2,16 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { 
-  Lock, 
-  Unlock, 
-  Search, 
-  Users, 
-  Calendar, 
-  Coins, 
-  Eye, 
-  LogOut, 
-  ArrowUpDown, 
+import {
+  Lock,
+  Unlock,
+  Search,
+  Users,
+  Calendar,
+  Coins,
+  Eye,
+  LogOut,
+  ArrowUpDown,
   FileText,
   AlertCircle,
   X,
@@ -20,8 +20,9 @@ import {
   Download,
   ChevronLeft,
   ChevronRight,
-  RefreshCw
+  RefreshCw,
 } from 'lucide-react';
+import { getApiUrl } from '@/lib/api';
 
 interface Submission {
   id: number;
@@ -58,14 +59,8 @@ export default function AdminPortal() {
     setIsLoading(true);
     setAuthError('');
     
-    const baseApiUrl = process.env.NEXT_PUBLIC_API_URL;
-    const isMissingEnv = !baseApiUrl || baseApiUrl === 'undefined' || baseApiUrl.trim() === '';
-    const apiUrl = isMissingEnv ? 'http://localhost:8000/api' : baseApiUrl;
-
-    console.log('[Admin Dashboard API Request] Fetching from URL:', `${apiUrl}/admin/submissions`);
-
     try {
-      const response = await fetch(`${apiUrl}/admin/submissions`, {
+      const response = await fetch(`${getApiUrl()}/admin/submissions`, {
         method: 'GET',
         headers: {
           'Accept': 'application/json',
@@ -81,21 +76,14 @@ export default function AdminPortal() {
       } else {
         sessionStorage.removeItem('adminToken');
         setIsAuthenticated(false);
-        let errorMsg = response.status === 401 
-          ? 'Invalid Admin Token. Access Denied.' 
-          : 'Server connection error.';
-        if (isMissingEnv) {
-          errorMsg += ' (Note: NEXT_PUBLIC_API_URL is not configured in your deployment environment).';
-        }
-        setAuthError(errorMsg);
+        setAuthError(
+          response.status === 401
+            ? 'Invalid Admin Token. Access Denied.'
+            : 'Server connection error.'
+        );
       }
-    } catch (error) {
-      console.error('Admin Auth Error:', error);
-      let errorMsg = 'Unable to connect to the backend server.';
-      if (isMissingEnv) {
-        errorMsg += ' (Note: NEXT_PUBLIC_API_URL environment variable is missing/undefined. Please configure it in your Railway dashboard to point to your backend API, e.g. https://your-backend.up.railway.app/api).';
-      }
-      setAuthError(errorMsg);
+    } catch {
+      setAuthError('Unable to connect to the backend server.');
     } finally {
       setIsLoading(false);
     }
@@ -131,11 +119,9 @@ export default function AdminPortal() {
   const handleDeleteSubmission = async (id: number) => {
     setIsDeleting(true);
     const savedToken = sessionStorage.getItem('adminToken') || '';
-    const baseApiUrl = process.env.NEXT_PUBLIC_API_URL;
-    const apiUrl = !baseApiUrl || baseApiUrl === 'undefined' || baseApiUrl.trim() === '' ? 'http://localhost:8000/api' : baseApiUrl;
 
     try {
-      const response = await fetch(`${apiUrl}/admin/submissions/${id}`, {
+      const response = await fetch(`${getApiUrl()}/admin/submissions/${id}`, {
         method: 'DELETE',
         headers: {
           'Accept': 'application/json',
@@ -146,13 +132,12 @@ export default function AdminPortal() {
       if (response.ok) {
         setSubmissions(prev => prev.filter(sub => sub.id !== id));
         setSubToDelete(null);
-        setSelectedSub(null); // Close details modal if open
+        setSelectedSub(null);
       } else {
         const errorData = await response.json();
         alert('Delete failed: ' + (errorData.message || 'Server error.'));
       }
-    } catch (error) {
-      console.error('Delete Error:', error);
+    } catch {
       alert('Could not connect to server to delete submission.');
     } finally {
       setIsDeleting(false);

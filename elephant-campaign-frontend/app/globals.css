@@ -42,23 +42,6 @@ img {
   display: block;
 }
 
-/* Shared media frame — keeps any photo inside the box */
-.media-frame {
-  position: relative;
-  overflow: hidden;
-  background: #d8d2c8;
-}
-
-.media-frame img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-  object-position: center center;
-}
-
 a {
   color: var(--green);
   text-decoration: none;
@@ -301,19 +284,9 @@ p {
   background: var(--white);
 }
 
-.section-head {
-  max-width: 36rem;
-  margin-bottom: 2rem;
-}
-
-.section-head h2,
 .narrow h2,
 .center h2 {
   font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-}
-
-.section-head p {
-  margin: 0;
 }
 
 .narrow {
@@ -332,61 +305,6 @@ p {
 
 .section h2 {
   margin-bottom: 0.75rem;
-}
-
-/* Cards */
-.card-grid {
-  display: grid;
-  gap: 1.25rem;
-  grid-template-columns: 1fr;
-}
-
-.card {
-  background: var(--white);
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-}
-
-.card-img {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: #d8d2c8;
-}
-
-.card-img img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-  object-position: center center;
-}
-
-.card-body {
-  padding: 1.15rem 1.2rem 1.35rem;
-}
-
-.card-meta {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--green);
-  margin: 0 0 0.35rem;
-}
-
-.card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.4rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 0.95rem;
 }
 
 /* Values */
@@ -448,128 +366,7 @@ p {
   font-size: 0.85rem;
 }
 
-/* Gallery mosaic */
-.gallery-mosaic {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
-}
-
-.gallery-mosaic figure {
-  margin: 0;
-  background: transparent;
-  min-width: 0;
-}
-
-.gallery-mosaic .gallery-frame {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  border-radius: 14px;
-  background: #d8d2c8;
-}
-
-.gallery-mosaic .is-wide .gallery-frame {
-  aspect-ratio: 16 / 10;
-}
-
-.gallery-mosaic .gallery-frame img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-  object-position: center center;
-}
-
-.gallery-mosaic figcaption {
-  display: block;
-  padding: 0.55rem 0.1rem 0;
-  font-size: 0.85rem;
-  color: var(--muted);
-  line-height: 1.4;
-}
-
-.gallery-mosaic figcaption strong {
-  color: var(--ink);
-  font-weight: 600;
-}
-
-/* Home photo strip */
-.photo-strip {
-  background: var(--white);
-  border-bottom: 1px solid var(--line);
-  overflow: hidden;
-}
-
-.photo-strip-track {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.photo-strip-item {
-  position: relative;
-  aspect-ratio: 1;
-  overflow: hidden;
-  background: #d8d2c8;
-}
-
-.photo-strip-item img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-  object-position: center center;
-}
-
-/* Home mosaic */
-.mosaic {
-  display: grid;
-  gap: 0.75rem;
-  grid-template-columns: 1fr;
-}
-
-.mosaic-large,
-.mosaic-stack > *,
-.mosaic-wide {
-  position: relative;
-  overflow: hidden;
-  border-radius: 14px;
-  background: #d8d2c8;
-}
-
-.mosaic-large {
-  aspect-ratio: 4 / 3;
-}
-
-.mosaic-stack {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-}
-
-.mosaic-stack > * {
-  aspect-ratio: 1;
-}
-
-.mosaic-wide {
-  aspect-ratio: 16 / 9;
-}
-
-.mosaic img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-  object-position: center center;
-}
-
-/* Programs (Elephant Care Nepal style list) */
+/* Programs */
 .program-stack {
   display: flex;
   flex-direction: column;
@@ -1241,6 +1038,6 @@ p {
 
 @media (min-width: 1024px) {
   .value-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
