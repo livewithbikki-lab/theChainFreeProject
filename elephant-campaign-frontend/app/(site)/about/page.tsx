@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MISSION_PILLARS, PHOTOS, PROBLEM_PHOTOS, VALUES } from "@/lib/content";
+import { PROBLEM_PHOTOS, VALUES } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About The Chain Free Project in Sauraha, Chitwan — chain-free elephant care, mahout work, and ride-free visits.",
+    "About The Chain Free Project in Sauraha — ride-free care, mahout work, and visitor programs that fund welfare.",
 };
 
 export default function AboutPage() {
@@ -15,47 +15,42 @@ export default function AboutPage() {
         <div className="container">
           <h1>About</h1>
           <p>
-            We work in Sauraha so elephants are not kept in chains for rides,
-            and so local mahouts still have decent work.
+            A small project in Sauraha working for chain-free care and fair
+            visitor experiences.
           </p>
         </div>
       </section>
       <section className="page-body">
         <div className="container">
-          <div className="split" style={{ marginBottom: "2.5rem" }}>
-            <div className="split-img">
-              <img src={PHOTOS.about} alt="Elephant with visitors nearby" />
+          <div className="split">
+            <div className="narrow" style={{ maxWidth: "none" }}>
+              <p>
+                <strong>The Chain Free Project</strong> started because tourist
+                riding is still normal in parts of Sauraha, and many elephants
+                spend long hours carrying people or standing on chains between
+                work.
+              </p>
+              <p>
+                We are not a big international NGO. We are a local effort: better
+                care for elephants, jobs for mahouts done the right way, and
+                visits that do not need a saddle.
+              </p>
+              <p>
+                When guests join our programs, the money goes to welfare and the
+                sanctuary fund — food, medical needs, shelter, and the people
+                looking after the animals.
+              </p>
             </div>
-            <div className="prose">
-              <p>
-                <strong>The Chain Free Project</strong> is a small, volunteer-led
-                effort in Sauraha, Chitwan. We are not a big NGO with offices
-                everywhere. We are people on the ground who got tired of seeing
-                elephants used only as a ride for tourists.
-              </p>
-              <p>
-                Riding looks fun from the outside. Up close, it often means long
-                hours, heavy gear, and chains when the elephant is not working.
-                That is normal in parts of the industry. We do not think it
-                should stay normal.
-              </p>
-              <p>
-                At the same time, we are not here to push mahouts out of a job.
-                Elephant work is a livelihood here. Our approach is to keep
-                people employed while changing how the care is done — less force,
-                more training, better conditions for the animals.
-              </p>
+            <div className="split-img">
+              <img src="/care-1.jpg" alt="Care on site" />
             </div>
           </div>
 
-          <div className="section-head">
-            <h2>What we are pushing against</h2>
-            <p>
-              Two problems go together: elephants forced to carry riders, and
-              elephants left chained in their habitat when the work day pauses.
-            </p>
+          <div className="narrow" style={{ marginTop: "2.5rem" }}>
+            <h2>What we refuse</h2>
+            <p>Riding for tourism, and chaining as the default between work.</p>
           </div>
-          <div className="problem-grid" style={{ marginBottom: "2.5rem" }}>
+          <div className="problem-grid problem-grid-2" style={{ marginBottom: "2rem" }}>
             {PROBLEM_PHOTOS.map((p) => (
               <figure
                 key={p.src}
@@ -69,61 +64,31 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <div className="prose" style={{ maxWidth: "100%" }}>
-            <h2>What we are trying to build</h2>
+          <div className="narrow">
+            <h2>What we offer instead</h2>
             <p>
-              A place and a way of working where elephants can move more freely,
-              get proper food and medical care, and meet visitors without
-              carrying them. Guests still get a real experience. The elephant
-              gets a better day. Fees from those visits go directly to welfare
-              and the sanctuary fund.
-            </p>
-
-            <div className="value-grid" style={{ margin: "1.5rem 0 2rem" }}>
-              {MISSION_PILLARS.map((item) => (
-                <div key={item.title} className="value">
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="split" style={{ margin: "2rem 0" }}>
-              <div className="split-img">
-                <img src={PHOTOS.feed} alt="Feeding an elephant" />
-              </div>
-              <div className="split-img">
-                <img src="/care-2.jpg" alt="Elephant with fresh fodder" />
-              </div>
-            </div>
-
-            <h2>How we operate</h2>
-            <div className="value-grid" style={{ marginBottom: "2rem" }}>
-              {VALUES.map((v) => (
-                <div key={v.title} className="value">
-                  <h3>{v.title}</h3>
-                  <p>{v.text}</p>
-                </div>
-              ))}
-            </div>
-
-            <h2>Who we are</h2>
-            <p>
-              A small team with local partners and mahouts. We grow through
-              volunteers, visitors who choose ride-free options, and people who
-              support the rescue fund. Contact us if you want a straight answer
-              about the plan.
-            </p>
-
-            <p>
-              <Link href="/campaign" className="btn">
-                Rescue fund
-              </Link>{" "}
-              <Link href="/get-involved" className="btn btn-outline-dark">
-                Contact
-              </Link>
+              Walks, feeding, bath observation, short visits, and volunteer
+              days. Clear rules. Small groups. No forced shows.
             </p>
           </div>
+
+          <div className="value-grid" style={{ margin: "1.5rem 0 2rem" }}>
+            {VALUES.map((v) => (
+              <div key={v.title} className="value">
+                <h3>{v.title}</h3>
+                <p>{v.text}</p>
+              </div>
+            ))}
+          </div>
+
+          <p>
+            <Link href="/experiences" className="btn">
+              Programs
+            </Link>{" "}
+            <Link href="/get-involved" className="btn btn-outline-dark">
+              Contact
+            </Link>
+          </p>
         </div>
       </section>
     </>

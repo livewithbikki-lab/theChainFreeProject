@@ -20,7 +20,7 @@ export const NAV_ITEMS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/campaign", label: "Campaign" },
-  { href: "/experiences", label: "Experiences" },
+  { href: "/experiences", label: "Programs" },
   { href: "/gallery", label: "Gallery" },
   { href: "/get-involved", label: "Contact" },
 ] as const;
@@ -32,142 +32,145 @@ export const CAMPAIGN = {
   elephantLabel: "Rescue candidate (details soon)",
 };
 
-/**
- * Image roles:
- * - care / hero = good days (no riding, no chains)
- * - ride = elephants carrying people
- * - saddle = elephants chained in habitat
- */
+/** Only photos that frame well — used sparingly */
 export const PHOTOS = {
   hero: "/hero.jpg",
-  about: "/care-4.jpg",
-  campaign: "/care-1.jpg",
-  feed: "/care-1.jpg",
-  walk: "/care-3.jpg",
-  river: "/hero.jpg",
-  volunteer: "/care-4.jpg",
+  care: "/care-1.jpg",
+  careB: "/care-2.jpg",
+  careC: "/care-4.jpg",
+  ride: "/ride-1.jpg",
+  chain: "/saddle-2.jpg",
 } as const;
 
+/**
+ * Programs styled like ethical sanctuaries in Sauraha:
+ * clear name, time, duration, what you do, price note, book CTA.
+ * Fees go to welfare / sanctuary fund.
+ */
 export const EXPERIENCES = [
   {
-    id: "forest-walk",
-    title: "Forest walk",
+    id: "visit",
+    title: "Visit the project",
+    time: "By appointment",
+    duration: "30–45 minutes",
+    price: "Price on request",
+    image: PHOTOS.careC,
+    intro:
+      "A short, calm visit to meet the elephants and learn how chain-free care works here.",
+    activities: [
+      "Meet and greet with the elephants from a safe distance",
+      "Optional feeding if the team says it is a good moment",
+      "Learn about daily care, mahout work, and why we do not offer rides",
+      "See them move and rest without a riding schedule",
+    ],
+    note: "Good first visit if you have limited time in Sauraha.",
+  },
+  {
+    id: "walk",
+    title: "Walk with elephants",
+    time: "Morning or late afternoon",
     duration: "About 2 hours",
-    image: PHOTOS.walk,
-    summary:
-      "Walk with the group near the elephants on forest paths. You watch them feed and move around. No riding.",
+    price: "Price on request",
+    image: PHOTOS.careB,
+    intro:
+      "Walk nearby as the elephants move through natural paths. No riding. Guides and mahouts stay with you.",
+    activities: [
+      "Short briefing before you start",
+      "Walk alongside / near the elephants in a natural setting",
+      "Watch feeding and natural behaviour",
+      "Time for questions and photos without forcing poses",
+    ],
+    note: "Minimum group size may apply. We confirm when you book.",
   },
   {
-    id: "feed-prep",
-    title: "Feed prep",
-    duration: "About 1.5 hours",
-    image: PHOTOS.feed,
-    summary:
-      "Help make food bundles with grass, salt, and molasses, then feed the elephants with the mahouts.",
-  },
-  {
-    id: "river-bath",
-    title: "River bathing",
+    id: "bath",
+    title: "Elephant bath (observe)",
+    time: "Depends on weather and river",
     duration: "About 1 hour",
-    image: PHOTOS.river,
-    summary:
-      "Watch elephants bathe in the Rapti from a safe distance. Good for photos if you keep quiet and give them space.",
+    price: "Price on request",
+    image: PHOTOS.hero,
+    intro:
+      "Watch elephants bathe in the river. You can stay back and observe, or join scrubbing only if the team says it is safe and wanted that day.",
+    activities: [
+      "Guided observation at the river",
+      "Learn about elephant skin care and river routine",
+      "Optional gentle scrubbing if invited by mahouts",
+      "No hooks, no forced shows",
+    ],
+    note: "River level and weather can change the plan. We tell you upfront.",
+  },
+  {
+    id: "feed",
+    title: "Feed the elephants",
+    time: "By appointment",
+    duration: "About 1–1.5 hours",
+    price: "Price on request",
+    image: PHOTOS.care,
+    intro:
+      "Help prepare food and feed the elephants with the team. Includes simple treats made on site when available.",
+    activities: [
+      "Help prepare fodder or food bundles",
+      "Hand-feed under mahout guidance",
+      "Learn what they eat and why variety matters",
+      "Support daily nutrition, not a circus act",
+    ],
+    note: "Book ahead so food and staffing are ready.",
   },
   {
     id: "volunteer",
     title: "Volunteer day",
+    time: "Flexible",
     duration: "Half day or longer",
-    image: PHOTOS.volunteer,
-    summary:
-      "Help with daily work: fodder, cleaning, shelter tasks. Real work, not a show.",
+    price: "Contribution-based",
+    image: PHOTOS.careC,
+    intro:
+      "Join real daily work: fodder, cleaning, shelter tasks. Not a photo package — actual help.",
+    activities: [
+      "Fodder collection or prep",
+      "Shelter and grounds help",
+      "Support mahouts with routine care",
+      "Learn ethical handling basics on site",
+    ],
+    note: "Tell us your dates and experience level when you write.",
   },
 ] as const;
 
-/** Positive gallery — no saddle shots */
 export const GALLERY_ITEMS = [
-  { src: "/hero.jpg", title: "River time", caption: "Cool water, no rush.", wide: true },
-  { src: "/care-1.jpg", title: "Feeding", caption: "Trunk and trust.", wide: false },
-  { src: "/care-2.jpg", title: "Fresh greens", caption: "Daily food.", wide: false },
-  { src: "/care-3.jpg", title: "On site", caption: "Eating in peace.", wide: false },
-  { src: "/care-4.jpg", title: "With people", caption: "Calm, close encounters.", wide: false },
-  { src: "/care-5.jpg", title: "Sauraha days", caption: "From our work here.", wide: true },
-  { src: "/care-6.jpg", title: "Afternoon", caption: "Ordinary hours.", wide: false },
-  { src: "/care-7.jpg", title: "Together", caption: "Herd and handlers.", wide: false },
-  { src: "/care-8.jpg", title: "Open ground", caption: "Room to move.", wide: false },
-  { src: "/care-9.jpg", title: "Field work", caption: "Hands-on care.", wide: false },
-  { src: "/care-10.jpg", title: "Details", caption: "Skin, dust, sun.", wide: false },
-  { src: "/care-11.jpg", title: "Home ground", caption: "Where this project lives.", wide: false },
+  { src: PHOTOS.hero, title: "River", caption: "Bath and rest time." },
+  { src: PHOTOS.care, title: "Feeding", caption: "Daily care." },
+  { src: PHOTOS.careB, title: "On site", caption: "Room to move." },
+  { src: PHOTOS.careC, title: "With the team", caption: "Calm visits only." },
 ] as const;
 
-/** Shown only in problem sections — not in gallery / experiences */
 export const PROBLEM_PHOTOS = [
   {
-    src: "/ride-1.jpg",
+    src: PHOTOS.ride,
     kind: "ride" as const,
-    label: "Riding — elephants made to carry people",
+    label: "Riding — elephants made to carry tourists",
   },
   {
-    src: "/ride-2.jpg",
-    kind: "ride" as const,
-    label: "Riding — still sold as a tourist activity",
-  },
-  {
-    src: "/saddle-1.jpg",
+    src: PHOTOS.chain,
     kind: "chain" as const,
-    label: "Chained in habitat between work",
+    label: "Chained in habitat when not working",
   },
-  {
-    src: "/saddle-2.jpg",
-    kind: "chain" as const,
-    label: "Chained — little room to move or rest",
-  },
-  {
-    src: "/saddle-3.jpg",
-    kind: "chain" as const,
-    label: "Chained life is what we want to end",
-  },
-] as const;
-
-export const HOME_STRIP = [
-  "/care-1.jpg",
-  "/care-2.jpg",
-  "/care-3.jpg",
-  "/care-4.jpg",
-  "/care-5.jpg",
-  "/hero.jpg",
 ] as const;
 
 export const VALUES = [
-  {
-    title: "No chains",
-    text: "We want elephants off heavy chains as much as possible. They need room to move and rest.",
-  },
   {
     title: "No riding",
     text: "Visitors stay on the ground. Walks, feeding, and watching only.",
   },
   {
-    title: "Work for mahouts",
-    text: "Local handlers keep jobs. We focus on better pay and better training, not cutting people out.",
+    title: "No chains when we can help it",
+    text: "We work toward freer movement and rest — not standing locked for hours.",
   },
   {
-    title: "Long-term care",
-    text: "If we take on an elephant, we plan for food, shelter, and vet care for the long run — not just the rescue day.",
-  },
-] as const;
-
-export const MISSION_PILLARS = [
-  {
-    title: "Rescue and shelter",
-    text: "Help get working elephants out of riding work and into safer, chain-free care.",
+    title: "Fees fund care",
+    text: "Money from ethical programs goes directly to elephant welfare and the sanctuary fund.",
   },
   {
-    title: "Mahout training",
-    text: "Train and employ local mahouts in positive, cooperative handling.",
-  },
-  {
-    title: "Visitor experiences",
-    text: "Offer simple ride-free activities. Money from these visits goes straight into elephant welfare and the sanctuary fund.",
+    title: "Mahouts keep work",
+    text: "Local handlers stay employed. Better training, better conditions — not cutting people out.",
   },
 ] as const;
 

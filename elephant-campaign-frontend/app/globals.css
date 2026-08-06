@@ -306,12 +306,32 @@ p {
   margin-bottom: 2rem;
 }
 
-.section-head h2 {
+.section-head h2,
+.narrow h2,
+.center h2 {
   font-size: clamp(1.6rem, 3.5vw, 2.2rem);
 }
 
 .section-head p {
   margin: 0;
+}
+
+.narrow {
+  max-width: 40rem;
+}
+
+.narrow p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.narrow.center {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.section h2 {
+  margin-bottom: 0.75rem;
 }
 
 /* Cards */
@@ -549,11 +569,174 @@ p {
   object-position: center center;
 }
 
+/* Programs (Elephant Care Nepal style list) */
+.program-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.program-card {
+  display: grid;
+  gap: 0;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.program-card-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #d8d2c8;
+  overflow: hidden;
+}
+
+.program-card-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.program-card-body {
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.program-card-body h2 {
+  font-size: 1.45rem;
+  margin-bottom: 0.65rem;
+}
+
+.program-card-body h3 {
+  font-size: 1rem;
+  margin: 1rem 0 0.4rem;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.program-facts {
+  list-style: none;
+  margin: 0 0 0.85rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+.program-card-body > p {
+  color: var(--muted);
+}
+
+.program-card-body ul:not(.program-facts) {
+  margin: 0 0 0.75rem;
+  padding-left: 1.15rem;
+  color: var(--muted);
+}
+
+.program-card-body li {
+  margin-bottom: 0.35rem;
+}
+
+.program-note {
+  font-size: 0.9rem !important;
+  font-style: italic;
+  margin-bottom: 1rem !important;
+}
+
+.program-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.program-list-home {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.program-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.1rem 1.15rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.program-row h3 {
+  font-size: 1.15rem;
+  margin: 0 0 0.25rem;
+}
+
+.program-row p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.program-meta {
+  font-size: 0.8rem !important;
+  font-weight: 600;
+  color: var(--green) !important;
+  margin-bottom: 0.35rem !important;
+}
+
+.gallery-simple {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.gallery-simple figure {
+  margin: 0;
+}
+
+.gallery-simple .gallery-frame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #d8d2c8;
+}
+
+.gallery-simple .gallery-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.gallery-simple figcaption {
+  padding: 0.5rem 0.1rem 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.gallery-simple figcaption strong {
+  color: var(--ink);
+}
+
 /* Problem photos: ride = carrying people, chain = chained in habitat */
 .problem-grid {
   display: grid;
   gap: 0.85rem;
   grid-template-columns: 1fr;
+}
+
+.problem-grid-2 {
+  max-width: 720px;
 }
 
 .problem-card {
@@ -1009,52 +1192,37 @@ p {
     display: none;
   }
 
-  .card-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .value-grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  .photo-strip-track {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
-  .photo-strip-item {
-    aspect-ratio: 5 / 4;
-  }
-
-  .problem-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .gallery-mosaic {
+  .problem-grid-2 {
     grid-template-columns: 1fr 1fr;
   }
 
-  .gallery-mosaic .is-wide {
-    grid-column: 1 / -1;
+  .program-card {
+    grid-template-columns: 0.85fr 1.15fr;
   }
 
-  .mosaic {
-    grid-template-columns: 1.2fr 0.8fr;
-    grid-template-rows: auto auto;
-  }
-
-  .mosaic-large {
-    grid-row: 1 / 2;
+  .program-card-media {
+    min-height: 100%;
     aspect-ratio: auto;
-    min-height: 280px;
+    align-self: stretch;
   }
 
-  .mosaic-stack {
-    grid-row: 1 / 2;
-    grid-template-columns: 1fr;
+  .program-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
   }
 
-  .mosaic-wide {
-    grid-column: 1 / -1;
+  .program-row .btn {
+    flex-shrink: 0;
+  }
+
+  .gallery-simple {
+    grid-template-columns: 1fr 1fr;
   }
 
   .footer-grid {
@@ -1072,28 +1240,7 @@ p {
 }
 
 @media (min-width: 1024px) {
-  .card-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
   .value-grid {
     grid-template-columns: repeat(4, 1fr);
-  }
-
-  .problem-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .gallery-mosaic {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .gallery-mosaic .is-wide {
-    grid-column: span 2;
-  }
-
-  .gallery-mosaic .is-wide .gallery-frame {
-    aspect-ratio: 16 / 9;
-    max-height: 420px;
   }
 }

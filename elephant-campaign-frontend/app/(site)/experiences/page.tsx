@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { EXPERIENCES } from "@/lib/content";
+import { EXPERIENCES, WHATSAPP_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Experiences",
+  title: "Programs",
   description:
-    "Ride-free elephant experiences in Sauraha: forest walks, feed prep, river watching, and volunteer days.",
+    "Ethical elephant programs in Sauraha: visit, walk, bath observation, feeding, volunteer. Fees fund welfare and sanctuary care.",
 };
 
 export default function ExperiencesPage() {
@@ -13,71 +13,86 @@ export default function ExperiencesPage() {
     <>
       <section className="page-hero">
         <div className="container">
-          <h1>Experiences</h1>
+          <h1>Our programs</h1>
           <p>
-            Ride-free activities in Sauraha. You meet the elephants without
-            sitting on them. What you pay goes to their care.
+            Ride-free activities in Sauraha. Clear times, small groups, and fees
+            that go to elephant welfare and the sanctuary fund.
           </p>
         </div>
       </section>
+
       <section className="page-body">
         <div className="container">
-          <div
-            className="prose"
-            style={{ marginBottom: "2rem", maxWidth: "40rem" }}
-          >
+          <div className="narrow" style={{ marginBottom: "2rem" }}>
             <p>
-              A lot of people only know elephant tourism as a ride. That is not
-              what we offer. You walk nearby, help with food, watch bathing, or
-              join a work day with the team.
+              These programs are how visitors meet our work without climbing on
+              an elephant. You walk, feed, watch bathing, or help with daily
+              tasks.
             </p>
             <p>
               <strong>
                 Money collected from these ethical experiences goes directly to
                 the fund for elephant welfare and the sanctuary.
-              </strong>{" "}
-              Food, care, shelter, and the long-term work — not pocketed as a
-              normal tour markup.
-            </p>
-            <p>
-              Groups are kept small. We do not do hook shows or forced photo
-              poses. If the elephants need space, we give it. Weather and river
-              conditions can change the plan — we will say so upfront.
+              </strong>
             </p>
           </div>
 
-          <div className="card-grid">
+          <div className="program-stack">
             {EXPERIENCES.map((exp) => (
-              <article key={exp.id} className="card">
-                <div className="card-img">
-                  <img src={exp.image} alt={exp.title} />
+              <article key={exp.id} id={exp.id} className="program-card">
+                <div className="program-card-media">
+                  <img src={exp.image} alt="" />
                 </div>
-                <div className="card-body">
-                  <p className="card-meta">{exp.duration}</p>
-                  <h3>{exp.title}</h3>
-                  <p>{exp.summary}</p>
+                <div className="program-card-body">
+                  <h2>{exp.title}</h2>
+                  <ul className="program-facts">
+                    <li>
+                      <strong>Time:</strong> {exp.time}
+                    </li>
+                    <li>
+                      <strong>Duration:</strong> {exp.duration}
+                    </li>
+                    <li>
+                      <strong>Price:</strong> {exp.price}
+                    </li>
+                  </ul>
+                  <p>{exp.intro}</p>
+                  <h3>What you do</h3>
+                  <ul>
+                    {exp.activities.map((a) => (
+                      <li key={a}>{a}</li>
+                    ))}
+                  </ul>
+                  {exp.note && <p className="program-note">{exp.note}</p>}
+                  <div className="program-actions">
+                    <Link href="/get-involved" className="btn">
+                      Book / enquire
+                    </Link>
+                    <a
+                      href={WHATSAPP_URL}
+                      className="btn btn-outline-dark"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      WhatsApp
+                    </a>
+                  </div>
                 </div>
               </article>
             ))}
           </div>
 
-          <div className="prose" style={{ marginTop: "2.5rem" }}>
-            <h2>Where your fee goes</h2>
+          <div className="narrow" style={{ marginTop: "2.5rem" }}>
+            <h2>How to book</h2>
             <p>
-              Experience fees support daily welfare and the sanctuary fund:
-              fodder, medical needs, shelter, and mahout work tied to proper
-              care. When you book with us, you are funding the model — not a
-              ride.
-            </p>
-            <h2>Booking</h2>
-            <p>
-              Send us your dates, how many people, and what you want to do. We
-              will check availability and reply with the price and what to
-              bring. No online checkout yet — just message us.
+              Message us with your dates, group size, and which program you
+              want. We confirm availability, price, meeting point, and what to
+              bring. Hotel pick-up in Sauraha can be arranged when we confirm
+              your booking.
             </p>
             <p>
               <Link href="/get-involved" className="btn">
-                Ask about a visit
+                Contact form
               </Link>
             </p>
           </div>

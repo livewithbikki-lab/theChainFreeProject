@@ -2,9 +2,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import {
   EXPERIENCES,
-  HOME_STRIP,
-  MISSION_PILLARS,
-  PHOTOS,
   PROBLEM_PHOTOS,
   SITE,
   VALUES,
@@ -14,7 +11,7 @@ import CampaignProgress from "@/components/CampaignProgress";
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "The Chain Free Project works for chain-free, ride-free elephant care in Sauraha, Chitwan, Nepal.",
+    "The Chain Free Project — ride-free, chain-free elephant care in Sauraha, Chitwan. Ethical visits fund sanctuary welfare.",
 };
 
 export default function HomePage() {
@@ -22,49 +19,59 @@ export default function HomePage() {
     <>
       <section className="hero">
         <div className="hero-bg">
-          <img src={PHOTOS.hero} alt="Elephant in the river near Sauraha" />
+          <img src="/hero.jpg" alt="" />
         </div>
         <div className="container hero-content">
           <p className="hero-kicker">{SITE.location}</p>
-          <h1>Elephants should not live in chains for tourism.</h1>
+          <h1>Ride-free elephant care in Sauraha</h1>
           <p>
-            We are a small project in Sauraha working to end riding and heavy
-            chaining, support local mahouts, and give visitors a better way to
-            spend time with elephants.
+            We work so elephants are not used for rides or left on chains — and
+            so visitors can still meet them in a fair way. Fees from our
+            programs go to elephant welfare and the sanctuary fund.
           </p>
           <div className="hero-actions">
-            <Link href="/campaign" className="btn">
-              Support the rescue fund
+            <Link href="/experiences" className="btn">
+              See programs
             </Link>
-            <Link href="/about" className="btn btn-outline">
-              About us
+            <Link href="/campaign" className="btn btn-outline">
+              Support the fund
             </Link>
           </div>
-        </div>
-      </section>
-
-      <section className="photo-strip" aria-label="Photos from care work">
-        <div className="photo-strip-track">
-          {HOME_STRIP.map((src) => (
-            <div key={src} className="photo-strip-item">
-              <img src={src} alt="" />
-            </div>
-          ))}
         </div>
       </section>
 
       <section className="section section-alt">
+        <div className="container narrow">
+          <h2>Who we are</h2>
+          <p>
+            <strong>The Chain Free Project</strong> is a small effort in
+            Sauraha, Chitwan. We promote chain-free care, train with local
+            mahouts, and run simple visitor programs without riding.
+          </p>
+          <p>
+            Tourist riding is still common here. Between rides, many elephants
+            stay chained. We want that to change — without throwing mahouts out
+            of work.
+          </p>
+          <p>
+            <Link href="/about" className="btn btn-outline-dark">
+              About the project
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container">
-          <div className="section-head">
-            <h2>The problem we see</h2>
+          <div className="narrow">
+            <h2>What we are against</h2>
             <p>
-              In Sauraha, many elephants used for tourism still carry people for
-              hours. When they are not working, they are often kept on chains in
-              their habitat. Guests get a photo. The elephant gets a hard day.
+              Two things we see too often: elephants carrying people for
+              tourism, and elephants chained in their habitat when the work
+              stops.
             </p>
           </div>
-
-          <div className="problem-grid">
+          <div className="problem-grid problem-grid-2">
             {PROBLEM_PHOTOS.map((p) => (
               <figure
                 key={p.src}
@@ -77,69 +84,40 @@ export default function HomePage() {
               </figure>
             ))}
           </div>
-
-          <div className="section-head" style={{ marginTop: "1.75rem" }}>
-            <p>
-              We think tourism can work differently. People can still meet
-              elephants. Mahouts can still earn a living. The animal does not
-              have to carry anyone or stand locked in place all afternoon.
-            </p>
-            <p style={{ marginTop: "1rem" }}>
-              <Link href="/about" className="btn">
-                Read more about our work
-              </Link>
-            </p>
-          </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section-alt">
         <div className="container">
-          <div className="section-head">
-            <h2>What we actually do</h2>
-            <p>Three parts. That is the whole plan.</p>
-          </div>
-          <div className="value-grid">
-            {MISSION_PILLARS.map((item) => (
-              <div key={item.title} className="value">
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-alt" id="experiences">
-        <div className="container">
-          <div className="section-head">
-            <h2>Visit without riding</h2>
+          <div className="narrow">
+            <h2>Our programs</h2>
             <p>
-              If you come, you stay on the ground. Small groups. Clear rules.
-              The elephant’s comfort comes first. Money from these visits goes
-              directly to elephant welfare and the sanctuary fund.
+              Walk, feed, bath observation, short visits, volunteer days. No
+              rides. Money from bookings goes to care and the sanctuary fund.
             </p>
           </div>
-          <div className="card-grid">
+          <div className="program-list-home">
             {EXPERIENCES.map((exp) => (
-              <article key={exp.id} className="card">
-                <div className="card-img">
-                  <img src={exp.image} alt={exp.title} />
-                </div>
-                <div className="card-body">
-                  <p className="card-meta">{exp.duration}</p>
+              <article key={exp.id} className="program-row">
+                <div>
                   <h3>{exp.title}</h3>
-                  <p>{exp.summary}</p>
+                  <p className="program-meta">
+                    {exp.duration} · {exp.price}
+                  </p>
+                  <p>{exp.intro}</p>
                 </div>
+                <Link href={`/experiences#${exp.id}`} className="btn btn-outline-dark">
+                  Details
+                </Link>
               </article>
             ))}
           </div>
-          <p style={{ marginTop: "1.5rem" }}>
+          <p style={{ marginTop: "1.25rem" }}>
             <Link href="/experiences" className="btn">
-              See experiences
+              Full program list
             </Link>{" "}
             <Link href="/get-involved" className="btn btn-outline-dark">
-              Ask about a visit
+              Book / enquire
             </Link>
           </p>
         </div>
@@ -147,9 +125,8 @@ export default function HomePage() {
 
       <section className="section">
         <div className="container">
-          <div className="section-head">
-            <h2>Our rules</h2>
-            <p>We try to hold ourselves to these every day.</p>
+          <div className="narrow">
+            <h2>How we work</h2>
           </div>
           <div className="value-grid">
             {VALUES.map((v) => (
@@ -164,67 +141,35 @@ export default function HomePage() {
 
       <section className="section section-alt">
         <div className="container split">
-          <div>
-            <div className="section-head">
-              <h2>Rescue fund</h2>
-              <p>
-                We are raising money to take one working tourist elephant out of
-                riding work and keep her in chain-free care. That means vet
-                checks, food, shelter, and pay for the people looking after her.
-              </p>
-              <p>
-                Donations and income from ethical experiences both go toward
-                welfare and sanctuary work. If you want details on how funds are
-                used, just ask us.
-              </p>
-            </div>
+          <div className="narrow" style={{ maxWidth: "none" }}>
+            <h2>Rescue fund</h2>
+            <p>
+              We are raising support to free one working tourist elephant from
+              riding work and keep her in proper care — food, shelter, vet
+              help, and mahout wages.
+            </p>
+            <p>
+              Donations and program fees both support welfare and sanctuary
+              work.
+            </p>
             <CampaignProgress />
           </div>
           <div className="split-img">
-            <img src={PHOTOS.campaign} alt="Feeding and care on site" />
+            <img src="/care-1.jpg" alt="Feeding on site" />
           </div>
         </div>
       </section>
 
       <section className="section">
-        <div className="container">
-          <div className="section-head">
-            <h2>Better days look like this</h2>
-            <p>
-              Care, food, and calm time — not saddles.{" "}
-              <Link href="/gallery">Full gallery</Link>
-            </p>
-          </div>
-          <div className="mosaic">
-            <div className="mosaic-large">
-              <img src="/care-4.jpg" alt="Elephant with people nearby" />
-            </div>
-            <div className="mosaic-stack">
-              <img src="/care-1.jpg" alt="Feeding" />
-              <img src="/care-2.jpg" alt="Fresh fodder" />
-            </div>
-            <div className="mosaic-wide">
-              <img src="/hero.jpg" alt="River" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-alt">
-        <div
-          className="container"
-          style={{ textAlign: "center", maxWidth: "36rem" }}
-        >
-          <h2 style={{ fontSize: "clamp(1.5rem, 3.5vw, 2rem)" }}>
-            Want to help?
-          </h2>
+        <div className="container narrow center">
+          <h2>Get in touch</h2>
           <p>
-            You can visit, volunteer, donate toward the rescue, or share this
-            page. WhatsApp or WeChat — both work.
+            Book a program, volunteer, or ask about the fund. WhatsApp or
+            WeChat.
           </p>
-          <p style={{ marginTop: "1.25rem" }}>
+          <p>
             <Link href="/get-involved" className="btn">
-              Get in touch
+              Contact us
             </Link>
           </p>
         </div>

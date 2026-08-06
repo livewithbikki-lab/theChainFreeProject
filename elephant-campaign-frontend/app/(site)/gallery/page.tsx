@@ -3,7 +3,7 @@ import { GALLERY_ITEMS } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Gallery",
-  description: "Photos from The Chain Free Project in Sauraha, Chitwan.",
+  description: "A few photos from The Chain Free Project in Sauraha.",
 };
 
 export default function GalleryPage() {
@@ -12,20 +12,14 @@ export default function GalleryPage() {
       <section className="page-hero">
         <div className="container">
           <h1>Gallery</h1>
-          <p>
-            Photos from care work in Sauraha — river time, feeding, and ordinary
-            days with the elephants. No riding shots here.
-          </p>
+          <p>A few photos from care work. No riding shots.</p>
         </div>
       </section>
       <section className="page-body">
         <div className="container">
-          <div className="gallery-mosaic">
+          <div className="gallery-simple">
             {GALLERY_ITEMS.map((item) => (
-              <figure
-                key={item.src}
-                className={item.wide ? "is-wide" : undefined}
-              >
+              <figure key={item.src}>
                 <div className="gallery-frame">
                   <img src={item.src} alt={item.title} loading="lazy" />
                 </div>
