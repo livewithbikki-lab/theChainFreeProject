@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   },
   description:
     "The Chain Free Project works for chain-free, ride-free elephant care in Sauraha, Chitwan, Nepal.",
+  icons: {
+    icon: [{ url: "/logo.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/logo.svg" }],
+  },
   openGraph: {
     type: "website",
     url: SITE.url,

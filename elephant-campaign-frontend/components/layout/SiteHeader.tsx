@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { NAV_ITEMS, SITE } from '@/lib/content';
+import Logo from '@/components/Logo';
+import { NAV_ITEMS } from '@/lib/content';
 
 export default function SiteHeader() {
   const pathname = usePathname();
@@ -16,9 +17,8 @@ export default function SiteHeader() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Link href="/" className="logo" onClick={() => setOpen(false)}>
-          {SITE.name}
-          <span>{SITE.location}</span>
+        <Link href="/" className="logo" onClick={() => setOpen(false)} aria-label="The Chain Free Project home">
+          <Logo size={44} />
         </Link>
 
         <nav className="nav-desktop" aria-label="Primary">

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { MapPin } from 'lucide-react';
+import Logo from '@/components/Logo';
 import { WhatsAppIcon, WeChatIcon } from '@/components/icons/BrandIcons';
 import { NAV_ITEMS, SITE, WHATSAPP_DISPLAY, WHATSAPP_URL } from '@/lib/content';
 import FooterChat from '@/components/layout/FooterChat';
@@ -9,7 +10,10 @@ export default function SiteFooter() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div>
-          <h3>{SITE.name}</h3>
+          <div className="footer-brand">
+            <Logo size={40} showWordmark={false} variant="on-dark" />
+            <h3>{SITE.name}</h3>
+          </div>
           <p>
             Chain-free, ride-free elephant work in Sauraha, Chitwan, Nepal.
           </p>

@@ -90,22 +90,70 @@ p {
 }
 
 .logo {
-  font-family: var(--font-display), Georgia, serif;
-  font-size: 1.15rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
   color: var(--green-dark) !important;
-  letter-spacing: 0.01em;
+  text-decoration: none !important;
 }
 
-.logo span {
+.logo:hover {
+  color: var(--green-dark) !important;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.brand-logo-mark {
+  flex-shrink: 0;
   display: block;
+  border-radius: 50%;
+}
+
+.brand-logo-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.15;
+}
+
+.brand-logo-name {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(0.95rem, 2.8vw, 1.12rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--green-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.brand-logo-loc {
   font-family: var(--font-body), sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-top: 2px;
+  margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.footer-brand h3 {
+  margin: 0;
 }
 
 .nav-desktop {
