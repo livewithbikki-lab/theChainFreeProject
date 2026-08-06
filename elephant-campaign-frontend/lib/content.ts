@@ -1,130 +1,130 @@
 export const SITE = {
   name: "The Chain Free Project",
-  tagline: "Where elephants walk free in Sauraha, Chitwan",
+  tagline: "Chain-free elephant care in Sauraha, Chitwan",
   location: "Sauraha, Chitwan · Nepal",
   whatsapp: "9779865345753",
   url: "https://elephant-campaign.vercel.app",
 };
 
 export const WHATSAPP_URL = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(
-  "Hi! I want to know more about The Chain Free Project and how I can help."
+  "Hi, I want to know more about The Chain Free Project."
 )}`;
 
 export const NAV_ITEMS = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "Our Mission" },
-  { href: "/campaign", label: "Rescue Fund" },
+  { href: "/about", label: "About" },
+  { href: "/campaign", label: "Campaign" },
   { href: "/experiences", label: "Experiences" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/get-involved", label: "Join Us" },
+  { href: "/get-involved", label: "Contact" },
 ] as const;
 
 export const CAMPAIGN = {
   goalNpr: 2_000_000,
   raisedNpr: 185_000,
-  status: "Rescue arrangements underway",
-  elephantLabel: "Upcoming rescue candidate",
+  status: "Rescue planning in progress",
+  elephantLabel: "Rescue candidate (details soon)",
 };
 
 export const EXPERIENCES = [
   {
     id: "forest-walk",
-    title: "Forest Walk",
+    title: "Forest walk",
     duration: "About 2 hours",
     image: "/elephant-1.jpg",
     summary:
-      "Walk quietly beside an elephant on natural paths. Watch how she chooses leaves, dust, and shade — tourism that never needs a saddle.",
+      "Walk with the group near the elephants on forest paths. You watch them feed and move around. No riding.",
   },
   {
     id: "feed-prep",
-    title: "Feed Preparation",
+    title: "Feed prep",
     duration: "About 1.5 hours",
     image: "/elephant-2.jpg",
     summary:
-      "Roll grass, salt, and molasses into nourishing bundles. Learn what healthy care looks like, then offer food with your own hands.",
+      "Help make food bundles with grass, salt, and molasses, then feed the elephants with the mahouts.",
   },
   {
     id: "river-bath",
-    title: "River Bathing",
+    title: "River bathing",
     duration: "About 1 hour",
     image: "/elephant-3.jpg",
     summary:
-      "From a respectful distance, watch elephants splash and rest in the Rapti River — pure joy, never a forced show.",
+      "Watch elephants bathe in the Rapti from a safe distance. Good for photos if you keep quiet and give them space.",
   },
   {
     id: "volunteer",
-    title: "Volunteer Day",
-    duration: "Half day or more",
+    title: "Volunteer day",
+    duration: "Half day or longer",
     image: "/elephant-5.jpg",
     summary:
-      "Work alongside mahouts: fodder, shelter upkeep, and the quiet daily tasks that keep sanctuary life running.",
+      "Help with daily work: fodder, cleaning, shelter tasks. Real work, not a show.",
   },
 ] as const;
 
 export const GALLERY_ITEMS = [
   {
     src: "/elephant-1.jpg",
-    title: "Morning in the forest",
-    caption: "Free to choose the path — no route, no hurry.",
+    title: "In the forest",
+    caption: "Moving and feeding without a timetable.",
   },
   {
     src: "/elephant-2.jpg",
-    title: "Food made with care",
-    caption: "Small acts of nutrition that keep a giant strong.",
+    title: "Making food",
+    caption: "Daily feed prep with the team.",
   },
   {
     src: "/elephant-3.jpg",
-    title: "Rapti River time",
-    caption: "Water, sun, and play without pressure.",
+    title: "At the river",
+    caption: "Bathing in the Rapti.",
   },
   {
     src: "/elephant-4.jpg",
-    title: "Mahouts as guardians",
-    caption: "Partnership built on trust, not force.",
+    title: "With mahouts",
+    caption: "Care based on training and trust.",
   },
   {
     src: "/elephant-5.jpg",
-    title: "Many hands helping",
-    caption: "Volunteers sharing the work of daily care.",
+    title: "Volunteers",
+    caption: "Extra hands on ordinary days.",
   },
   {
     src: "/elephant-6.jpg",
-    title: "A kinder Sauraha",
-    caption: "Growing ride-free tourism with the community.",
+    title: "In Sauraha",
+    caption: "Talking with people about ride-free tourism.",
   },
 ] as const;
 
 export const VALUES = [
   {
-    title: "Freedom from chains",
-    text: "Heavy chains and long restraint are not a fair price for tourism. We work so elephants can move, rest, and live with room to be themselves.",
+    title: "No chains",
+    text: "We want elephants off heavy chains as much as possible. They need room to move and rest.",
   },
   {
-    title: "Encounters without riding",
-    text: "The best meeting happens on the ground: walking nearby, preparing food, watching a river bath — wonder that does not sit on a back.",
+    title: "No riding",
+    text: "Visitors stay on the ground. Walks, feeding, and watching only.",
   },
   {
-    title: "Dignity for mahouts",
-    text: "Local handlers are essential. We support fair work and training in cooperative, positive care so livelihoods grow with compassion.",
+    title: "Work for mahouts",
+    text: "Local handlers keep jobs. We focus on better pay and better training, not cutting people out.",
   },
   {
-    title: "Care that lasts a lifetime",
-    text: "Rescue is not a photo moment. It is shelter, food, veterinary healing, and a permanent promise never to return an elephant to the saddle.",
+    title: "Long-term care",
+    text: "If we take on an elephant, we plan for food, shelter, and vet care for the long run — not just the rescue day.",
   },
 ] as const;
 
 export const MISSION_PILLARS = [
   {
-    title: "Rescue & sanctuary",
-    text: "Help working elephants leave commercial riding life for permanent chain-free shelter, forest time, and medical care.",
+    title: "Rescue and shelter",
+    text: "Help get working elephants out of riding work and into safer, chain-free care.",
   },
   {
-    title: "Mahout partnership",
-    text: "Employ and train local mahouts in positive reinforcement — turning restraint-based habits into skilled, proud guardianship.",
+    title: "Mahout training",
+    text: "Train and employ local mahouts in positive, cooperative handling.",
   },
   {
-    title: "Ethical tourism",
-    text: "Offer visitors honest, hands-off experiences that fund welfare and teach a better story of how to meet elephants in Nepal.",
+    title: "Visitor experiences",
+    text: "Offer simple ride-free activities that teach people a better way to meet elephants.",
   },
 ] as const;
 

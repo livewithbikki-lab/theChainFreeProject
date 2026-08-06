@@ -5,7 +5,7 @@ import { EXPERIENCES } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Experiences",
   description:
-    "Ride-free elephant experiences in Sauraha — forest walks, feed preparation, river observation, and volunteer days.",
+    "Ride-free elephant experiences in Sauraha: forest walks, feed prep, river watching, and volunteer days.",
 };
 
 export default function ExperiencesPage() {
@@ -15,25 +15,26 @@ export default function ExperiencesPage() {
         <div className="container">
           <h1>Experiences</h1>
           <p>
-            Come close without climbing on. Every activity is ride-free, paced
-            for elephant comfort, and meant to leave you changed — not the
-            animal exhausted.
+            Ride-free activities in Sauraha. You meet the elephants without
+            sitting on them.
           </p>
         </div>
       </section>
       <section className="page-body">
         <div className="container">
-          <div className="prose" style={{ marginBottom: "2rem", maxWidth: "40rem" }}>
+          <div
+            className="prose"
+            style={{ marginBottom: "2rem", maxWidth: "40rem" }}
+          >
             <p>
-              People often ask: “If I cannot ride, how do I meet an elephant?”
-              The answer is better than a ride. You walk nearby as she forages.
-              You prepare food with your hands. You watch her choose the river.
-              You learn from mahouts shifting from force toward trust.
+              A lot of people only know elephant tourism as a ride. That is not
+              what we offer. You walk nearby, help with food, watch bathing, or
+              join a work day with the team.
             </p>
             <p>
-              Groups stay small. Voices stay soft. There are no hooks, no forced
-              poses, and no saddles. When you book, you help fund the model we
-              want Sauraha to become known for.
+              Groups are kept small. We do not do hook shows or forced photo
+              poses. If the elephants need space, we give it. Weather and river
+              conditions can change the plan — we will say so upfront.
             </p>
           </div>
 
@@ -53,15 +54,15 @@ export default function ExperiencesPage() {
           </div>
 
           <div className="prose" style={{ marginTop: "2.5rem" }}>
-            <h2>Ready when you are</h2>
+            <h2>Booking</h2>
             <p>
-              Tell us your dates, group size, and which experience calls to you.
-              We will reply with availability and clear next steps. Prices are
-              shared on enquiry so we can match the right format to your group.
+              Send us your dates, how many people, and what you want to do. We
+              will check availability and reply with the price and what to
+              bring. No online checkout yet — just message us.
             </p>
             <p>
               <Link href="/get-involved" className="btn">
-                Enquire or book
+                Ask about a visit
               </Link>
             </p>
           </div>

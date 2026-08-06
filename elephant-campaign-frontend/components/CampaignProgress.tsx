@@ -30,7 +30,7 @@ export default function CampaignProgress() {
       </p>
       <p style={{ marginTop: "1rem", marginBottom: 0 }}>
         <Link href="/get-involved" className="btn">
-          Support the rescue
+          Support this fund
         </Link>
       </p>
     </div>

@@ -3,9 +3,9 @@ import Link from "next/link";
 import { MISSION_PILLARS, VALUES } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Our Mission",
+  title: "About",
   description:
-    "Learn why The Chain Free Project exists — chain-free sanctuary care, mahout livelihoods, and ride-free tourism in Sauraha, Chitwan.",
+    "About The Chain Free Project in Sauraha, Chitwan — chain-free elephant care, mahout work, and ride-free visits.",
 };
 
 export default function AboutPage() {
@@ -13,41 +13,40 @@ export default function AboutPage() {
     <>
       <section className="page-hero">
         <div className="container">
-          <h1>Our mission</h1>
+          <h1>About</h1>
           <p>
-            End the normalcy of chains and saddles — and prove that elephant
-            tourism in Sauraha can be beautiful without being cruel.
+            We work in Sauraha so elephants are not kept in chains for rides,
+            and so local mahouts still have decent work.
           </p>
         </div>
       </section>
       <section className="page-body">
         <div className="container prose">
           <p>
-            <strong>The Chain Free Project</strong> began with a feeling many
-            visitors to Sauraha quietly share: awe at the grace of elephants,
-            and unease at the metal that holds them still between rides.
+            <strong>The Chain Free Project</strong> is a small, volunteer-led
+            effort in Sauraha, Chitwan. We are not a big NGO with offices
+            everywhere. We are people on the ground who got tired of seeing
+            elephants used only as a ride for tourists.
           </p>
           <p>
-            For years, commercial tourism has asked too much of working
-            elephants — long hours under heavy saddles, limited movement, and
-            little space for natural behaviour like foraging, bathing, and rest.
-            We do not believe that has to be the only story Nepal tells.
+            Riding looks fun from the outside. Up close, it often means long
+            hours, heavy gear, and chains when the elephant is not working. That
+            is normal in parts of the industry. We do not think it should stay
+            normal.
           </p>
           <p>
-            We are a volunteer-driven initiative working at the edge of Chitwan
-            National Park. Our aim is practical and hopeful: build a{" "}
-            <strong>ride-free, chain-free care model</strong> that protects
-            elephants and still supports the local people whose lives are woven
-            with theirs.
+            At the same time, we are not here to push mahouts out of a job.
+            Elephant work is a livelihood here. Our approach is to keep people
+            employed while changing how the care is done — less force, more
+            training, better conditions for the animals.
           </p>
 
-          <h2>What we are building</h2>
+          <h2>What we are trying to build</h2>
           <p>
-            Not a theme park. Not a photo factory. A living sanctuary culture —
-            where rescued and protected elephants receive lifelong shelter,
-            food, and veterinary attention; where mahouts are trained and paid
-            as guardians; and where guests leave with deeper respect than they
-            arrived with.
+            A place and a way of working where elephants can move more freely,
+            get proper food and medical care, and meet visitors without carrying
+            them. Guests still get a real experience. The elephant gets a better
+            day.
           </p>
 
           <div className="value-grid" style={{ margin: "1.5rem 0 2rem" }}>
@@ -59,7 +58,7 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <h2>Our convictions</h2>
+          <h2>How we operate</h2>
           <div className="value-grid" style={{ marginBottom: "2rem" }}>
             {VALUES.map((v) => (
               <div key={v.title} className="value">
@@ -69,24 +68,20 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <h2>Who walks with us</h2>
+          <h2>Who we are</h2>
           <p>
-            We are small on purpose: close to the ground, close to the
-            elephants, close to mahouts and neighbours in Sauraha. Progress
-            grows through volunteers, ethical travellers, local partners, and
-            anyone willing to choose compassion over convenience.
-          </p>
-          <p>
-            If you have ever looked into an elephant’s eyes and felt something
-            larger than words — you already understand why we do this.
+            A small team with local partners and mahouts. We grow through
+            volunteers, visitors who choose ride-free options, and people who
+            support the rescue fund. If you want names, updates, or a walk
+            through of the plan, contact us and we will talk straight with you.
           </p>
 
           <p>
             <Link href="/campaign" className="btn">
-              Support the rescue fund
+              Rescue fund
             </Link>{" "}
             <Link href="/get-involved" className="btn btn-outline-dark">
-              Volunteer or visit
+              Contact
             </Link>
           </p>
         </div>

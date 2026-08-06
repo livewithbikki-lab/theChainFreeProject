@@ -3,8 +3,7 @@ import { GALLERY_ITEMS } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Gallery",
-  description:
-    "Photos from chain-free elephant care in Sauraha — forest time, river baths, mahout partnership, and community work.",
+  description: "Photos from The Chain Free Project in Sauraha, Chitwan.",
 };
 
 export default function GalleryPage() {
@@ -14,9 +13,8 @@ export default function GalleryPage() {
         <div className="container">
           <h1>Gallery</h1>
           <p>
-            Not performance shots — quiet proofs that an elephant’s day can hold
-            choice, water, green leaves, and human hands that only mean
-            kindness.
+            A few photos from the work in Sauraha — forest time, feeding, the
+            river, and people on site.
           </p>
         </div>
       </section>

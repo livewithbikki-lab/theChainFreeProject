@@ -114,8 +114,7 @@ export default function VolunteerForm() {
       {formSubmitted ? (
         <div className="form-success">
           <p>
-            <strong>Thank you.</strong> We received your message and will reply
-            soon.
+            <strong>Got it.</strong> Thanks — we will get back to you.
           </p>
           <button type="button" className="btn" onClick={() => setFormSubmitted(false)}>
             Send another

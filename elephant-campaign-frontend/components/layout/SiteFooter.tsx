@@ -8,17 +8,16 @@ export default function SiteFooter() {
         <div>
           <h3>{SITE.name}</h3>
           <p>
-            Building chain-free, ride-free elephant care in Sauraha, Chitwan —
-            with local mahouts, ethical visitors, and a clear rescue mission.
+            Chain-free, ride-free elephant work in Sauraha, Chitwan, Nepal.
           </p>
           <p>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-              WhatsApp us
+              WhatsApp
             </a>
           </p>
         </div>
         <div>
-          <h3>Explore</h3>
+          <h3>Pages</h3>
           <ul className="footer-links">
             {NAV_ITEMS.map((item) => (
               <li key={item.href}>
@@ -29,7 +28,7 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="container footer-bottom">
-        © {new Date().getFullYear()} {SITE.name}. Freedom over chains — always.
+        © {new Date().getFullYear()} {SITE.name}
       </div>
     </footer>
   );

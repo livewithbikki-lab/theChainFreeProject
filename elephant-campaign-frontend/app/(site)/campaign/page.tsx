@@ -4,9 +4,9 @@ import CampaignProgress from "@/components/CampaignProgress";
 import { CAMPAIGN, WHATSAPP_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Rescue Fund",
+  title: "Campaign",
   description:
-    "Support the Elephant Rescue Fund — help liberate a working tourist elephant into lifelong chain-free care in Sauraha, Chitwan.",
+    "Elephant rescue fund for The Chain Free Project in Sauraha, Chitwan.",
 };
 
 export default function CampaignPage() {
@@ -14,10 +14,10 @@ export default function CampaignPage() {
     <>
       <section className="page-hero">
         <div className="container">
-          <h1>Elephant Rescue Fund</h1>
+          <h1>Rescue fund</h1>
           <p>
-            One elephant. One permanent escape from commercial riding. A
-            lifetime of chain-free care — made possible by people like you.
+            We are raising money to take one working tourist elephant out of
+            riding work and keep her in proper care.
           </p>
         </div>
       </section>
@@ -26,50 +26,35 @@ export default function CampaignPage() {
           <div className="split">
             <div className="prose">
               <p>
-                Picture dawn over the Rapti: mist rising, birds calling, and an
-                elephant who once waited under a saddle instead stepping into
-                soft grass — no chain on her leg, no timetable pulling her from
-                the river.
+                Buying an elephant out of commercial work is expensive. After
+                that, the costs do not stop: food every day, shelter, medicine,
+                and wages for the people looking after her.
               </p>
               <p>
-                <strong>That is what this fund is for.</strong> We are raising{" "}
-                money to buy out a working tourist elephant, move her into
-                sanctuary care, and support her for life. Contributions go to
-                rescue costs, veterinary healing, food, shelter, and fair work
-                for the mahouts who will protect her every day.
+                That is what this fund is for. We are not asking for money to
+                “raise awareness” in the abstract. We are trying to free one
+                animal from riding and keep her off chains for good.
               </p>
               <p>
-                <strong>Current focus:</strong> {CAMPAIGN.elephantLabel}. We
-                will publish fuller details as soon as rescue contracts are
-                complete. Until then, every gift still moves freedom closer.
+                <strong>Status:</strong> {CAMPAIGN.elephantLabel}. We will post
+                clearer details when the paperwork is ready. Until then we are
+                still collecting support so we can move when the time comes.
               </p>
 
-              <h2>What your support covers</h2>
+              <h2>Where the money goes</h2>
               <ul>
-                <li>
-                  Fair negotiation to release an elephant from commercial riding
-                  work
-                </li>
-                <li>
-                  Immediate veterinary checks, treatment, and recovery planning
-                </li>
-                <li>
-                  Chain-free shelter, daily fodder, and access to natural
-                  movement
-                </li>
-                <li>
-                  Wages and training for mahouts practising cooperative care
-                </li>
-                <li>
-                  Local education that grows ride-free tourism in Sauraha
-                </li>
+                <li>Cost of releasing the elephant from commercial work</li>
+                <li>Vet checks and treatment</li>
+                <li>Food and shelter</li>
+                <li>Pay and training for mahouts</li>
+                <li>Basic local outreach on ride-free tourism</li>
               </ul>
 
-              <h2>Our promise on money</h2>
+              <h2>If you want to give</h2>
               <p>
-                Campaign gifts are for rescue and care — not for dressing up
-                riding as “sanctuary.” When major milestones happen, we share
-                them. When you have questions, we answer them.
+                Message us on WhatsApp or use the contact form. We will tell you
+                how to send support and answer questions about the campaign. We
+                would rather you ask than guess.
               </p>
 
               <p>
@@ -79,18 +64,18 @@ export default function CampaignPage() {
                   rel="noopener noreferrer"
                   className="btn btn-outline-dark"
                 >
-                  WhatsApp to support
+                  WhatsApp us
                 </a>{" "}
                 <Link href="/get-involved" className="btn">
-                  Write to us
+                  Contact form
                 </Link>
               </p>
             </div>
             <div>
               <CampaignProgress />
               <p className="progress-note" style={{ marginTop: "1rem" }}>
-                Prefer another path? Visit kindly, volunteer, or share this page
-                with someone who loves elephants.
+                You can also help by visiting ride-free, volunteering, or
+                sending this page to someone who might care.
               </p>
             </div>
           </div>
