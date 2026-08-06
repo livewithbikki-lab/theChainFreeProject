@@ -1,6 +1,13 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { EXPERIENCES, MISSION_PILLARS, SITE, VALUES } from "@/lib/content";
+import {
+  EXPERIENCES,
+  HOME_STRIP,
+  MISSION_PILLARS,
+  PHOTOS,
+  SITE,
+  VALUES,
+} from "@/lib/content";
 import CampaignProgress from "@/components/CampaignProgress";
 
 export const metadata: Metadata = {
@@ -14,7 +21,7 @@ export default function HomePage() {
     <>
       <section className="hero">
         <div className="hero-bg">
-          <img src="/elephant-1.jpg" alt="Elephant near the forest in Sauraha" />
+          <img src={PHOTOS.hero} alt="Elephant in the river near Sauraha" />
         </div>
         <div className="container hero-content">
           <p className="hero-kicker">{SITE.location}</p>
@@ -35,10 +42,20 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="photo-strip" aria-label="Photos from Sauraha">
+        <div className="photo-strip-track">
+          {HOME_STRIP.map((src) => (
+            <div key={src} className="photo-strip-item">
+              <img src={src} alt="" />
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="section section-alt">
         <div className="container split">
           <div className="split-img">
-            <img src="/elephant-2.jpg" alt="Preparing food for elephants" />
+            <img src={PHOTOS.problem} alt="Elephant eating fresh greens" />
           </div>
           <div>
             <div className="section-head">
@@ -115,6 +132,26 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <div className="section-head">
+            <h2>A short clip from Sauraha</h2>
+            <p>Real place. Real elephants. No filter pack.</p>
+          </div>
+          <div className="video-frame">
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              poster={PHOTOS.about}
+            >
+              <source src={PHOTOS.video} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="container">
+          <div className="section-head">
             <h2>Our rules</h2>
             <p>We try to hold ourselves to these every day.</p>
           </div>
@@ -129,7 +166,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section-alt">
+      <section className="section">
         <div className="container split">
           <div>
             <div className="section-head">
@@ -147,7 +184,31 @@ export default function HomePage() {
             <CampaignProgress />
           </div>
           <div className="split-img">
-            <img src="/elephant-4.jpg" alt="Mahout with elephant" />
+            <img src={PHOTOS.campaign} alt="People with an elephant on site" />
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="container">
+          <div className="section-head">
+            <h2>From the field</h2>
+            <p>
+              A few more shots.{" "}
+              <Link href="/gallery">Open the full gallery</Link>
+            </p>
+          </div>
+          <div className="mosaic">
+            <div className="mosaic-large">
+              <img src="/elephant-6.jpg" alt="Elephant close up" />
+            </div>
+            <div className="mosaic-stack">
+              <img src="/elephant-2.jpg" alt="Feeding" />
+              <img src="/elephant-11.jpg" alt="On site" />
+            </div>
+            <div className="mosaic-wide">
+              <img src="/elephant-1.jpg" alt="River" />
+            </div>
           </div>
         </div>
       </section>
@@ -162,7 +223,7 @@ export default function HomePage() {
           </h2>
           <p>
             You can visit, volunteer, donate toward the rescue, or share this
-            page. Even a short message on WhatsApp is useful.
+            page. Even a short message on WhatsApp or WeChat is useful.
           </p>
           <p style={{ marginTop: "1.25rem" }}>
             <Link href="/get-involved" className="btn">

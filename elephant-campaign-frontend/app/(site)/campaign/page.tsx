@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CampaignProgress from "@/components/CampaignProgress";
-import { CAMPAIGN, WHATSAPP_URL } from "@/lib/content";
+import { CAMPAIGN, PHOTOS, WHATSAPP_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Campaign",
@@ -52,9 +52,9 @@ export default function CampaignPage() {
 
               <h2>If you want to give</h2>
               <p>
-                Message us on WhatsApp or use the contact form. We will tell you
-                how to send support and answer questions about the campaign. We
-                would rather you ask than guess.
+                Message us on WhatsApp or WeChat, or use the contact form. We
+                will tell you how to send support and answer questions about the
+                campaign.
               </p>
 
               <p>
@@ -72,11 +72,13 @@ export default function CampaignPage() {
               </p>
             </div>
             <div>
+              <div className="split-img" style={{ marginBottom: "1.25rem" }}>
+                <img
+                  src={PHOTOS.campaign}
+                  alt="People spending time with an elephant"
+                />
+              </div>
               <CampaignProgress />
-              <p className="progress-note" style={{ marginTop: "1rem" }}>
-                You can also help by visiting ride-free, volunteering, or
-                sending this page to someone who might care.
-              </p>
             </div>
           </div>
         </div>

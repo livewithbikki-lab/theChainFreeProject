@@ -3,7 +3,6 @@ export const SITE = {
   tagline: "Chain-free elephant care in Sauraha, Chitwan",
   location: "Sauraha, Chitwan · Nepal",
   whatsapp: "9779865345753",
-  /** WeChat ID or phone — for Chinese-speaking guests */
   wechat: "+977-9708063226",
   url: "https://elephant-campaign.vercel.app",
 };
@@ -33,12 +32,25 @@ export const CAMPAIGN = {
   elephantLabel: "Rescue candidate (details soon)",
 };
 
+/** Best photo for each use */
+export const PHOTOS = {
+  hero: "/elephant-1.jpg", // river
+  problem: "/elephant-3.jpg", // eating greens
+  about: "/elephant-6.jpg", // face portrait
+  campaign: "/elephant-5.jpg", // with people
+  feed: "/elephant-2.jpg", // trunk feeding
+  walk: "/elephant-4.jpg",
+  river: "/elephant-1.jpg",
+  volunteer: "/elephant-5.jpg",
+  video: "/sauraha-clip.mp4",
+} as const;
+
 export const EXPERIENCES = [
   {
     id: "forest-walk",
     title: "Forest walk",
     duration: "About 2 hours",
-    image: "/elephant-1.jpg",
+    image: PHOTOS.walk,
     summary:
       "Walk with the group near the elephants on forest paths. You watch them feed and move around. No riding.",
   },
@@ -46,7 +58,7 @@ export const EXPERIENCES = [
     id: "feed-prep",
     title: "Feed prep",
     duration: "About 1.5 hours",
-    image: "/elephant-5.jpg",
+    image: PHOTOS.feed,
     summary:
       "Help make food bundles with grass, salt, and molasses, then feed the elephants with the mahouts.",
   },
@@ -54,7 +66,7 @@ export const EXPERIENCES = [
     id: "river-bath",
     title: "River bathing",
     duration: "About 1 hour",
-    image: "/elephant-6.jpg",
+    image: PHOTOS.river,
     summary:
       "Watch elephants bathe in the Rapti from a safe distance. Good for photos if you keep quiet and give them space.",
   },
@@ -62,58 +74,37 @@ export const EXPERIENCES = [
     id: "volunteer",
     title: "Volunteer day",
     duration: "Half day or longer",
-    image: "/elephant-7.jpg",
+    image: PHOTOS.volunteer,
     summary:
       "Help with daily work: fodder, cleaning, shelter tasks. Real work, not a show.",
   },
 ] as const;
 
 export const GALLERY_ITEMS = [
-  {
-    src: "/elephant-1.jpg",
-    title: "On site",
-    caption: "From our work in Sauraha.",
-  },
-  {
-    src: "/elephant-2.jpg",
-    title: "Daily care",
-    caption: "Time with the elephants.",
-  },
-  {
-    src: "/elephant-3.jpg",
-    title: "Around the shelter",
-    caption: "Ordinary days, real work.",
-  },
-  {
-    src: "/elephant-4.jpg",
-    title: "With the herd",
-    caption: "Close, calm encounters.",
-  },
-  {
-    src: "/elephant-5.jpg",
-    title: "Hands-on help",
-    caption: "Feeding and care routines.",
-  },
-  {
-    src: "/elephant-6.jpg",
-    title: "Outdoors",
-    caption: "Space to move and rest.",
-  },
-  {
-    src: "/elephant-7.jpg",
-    title: "Field work",
-    caption: "Mahouts and volunteers.",
-  },
-  {
-    src: "/elephant-8.jpg",
-    title: "Quiet moments",
-    caption: "No show. Just the animals.",
-  },
-  {
-    src: "/elephant-9.jpg",
-    title: "Sauraha",
-    caption: "Where this project lives.",
-  },
+  { src: "/elephant-1.jpg", title: "River time", caption: "Cool water, no rush.", wide: true },
+  { src: "/elephant-2.jpg", title: "Feeding", caption: "Trunk and trust.", wide: false },
+  { src: "/elephant-6.jpg", title: "Close up", caption: "Looking back at us.", wide: false },
+  { src: "/elephant-3.jpg", title: "Fresh greens", caption: "Daily food, ordinary care.", wide: false },
+  { src: "/elephant-4.jpg", title: "On site", caption: "Eating in peace.", wide: false },
+  { src: "/elephant-5.jpg", title: "With people", caption: "Guests and mahouts nearby.", wide: true },
+  { src: "/elephant-7.jpg", title: "Sauraha days", caption: "From our work here.", wide: false },
+  { src: "/elephant-8.jpg", title: "Care routine", caption: "Hands-on help.", wide: false },
+  { src: "/elephant-9.jpg", title: "Around the shelter", caption: "Real place, real animals.", wide: false },
+  { src: "/elephant-10.jpg", title: "Afternoon light", caption: "Quiet hours.", wide: false },
+  { src: "/elephant-11.jpg", title: "Together", caption: "Herd and handlers.", wide: true },
+  { src: "/elephant-12.jpg", title: "Open ground", caption: "Room to move.", wide: false },
+  { src: "/elephant-13.jpg", title: "Field notes", caption: "Work in progress.", wide: false },
+  { src: "/elephant-14.jpg", title: "Details", caption: "Skin, dust, sun.", wide: false },
+  { src: "/elephant-15.jpg", title: "Home ground", caption: "Where this project lives.", wide: false },
+] as const;
+
+export const HOME_STRIP = [
+  "/elephant-2.jpg",
+  "/elephant-6.jpg",
+  "/elephant-3.jpg",
+  "/elephant-5.jpg",
+  "/elephant-4.jpg",
+  "/elephant-1.jpg",
 ] as const;
 
 export const VALUES = [

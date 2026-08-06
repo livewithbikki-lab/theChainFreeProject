@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { GALLERY_ITEMS } from "@/lib/content";
+import { GALLERY_ITEMS, PHOTOS } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Gallery",
-  description: "Photos from The Chain Free Project in Sauraha, Chitwan.",
+  description: "Photos and a short video from The Chain Free Project in Sauraha.",
 };
 
 export default function GalleryPage() {
@@ -13,17 +13,31 @@ export default function GalleryPage() {
         <div className="container">
           <h1>Gallery</h1>
           <p>
-            A few photos from the work in Sauraha — forest time, feeding, the
-            river, and people on site.
+            Photos from Sauraha — river time, feeding, faces, and ordinary work
+            days. Plus a short clip at the top.
           </p>
         </div>
       </section>
       <section className="page-body">
         <div className="container">
-          <div className="gallery-grid">
+          <div className="video-frame" style={{ marginBottom: "2rem" }}>
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              poster={PHOTOS.about}
+            >
+              <source src={PHOTOS.video} type="video/mp4" />
+            </video>
+          </div>
+
+          <div className="gallery-mosaic">
             {GALLERY_ITEMS.map((item) => (
-              <figure key={item.src}>
-                <img src={item.src} alt={item.title} />
+              <figure
+                key={item.src}
+                className={item.wide ? "is-wide" : undefined}
+              >
+                <img src={item.src} alt={item.title} loading="lazy" />
                 <figcaption>
                   <strong>{item.title}</strong>
                   {item.caption ? ` — ${item.caption}` : ""}
