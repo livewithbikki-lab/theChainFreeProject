@@ -32,12 +32,14 @@ export const CAMPAIGN = {
   elephantLabel: "Rescue candidate (details soon)",
 };
 
-/** Care photos = free / on-site work. Saddle photos = problem only. */
+/**
+ * Image roles:
+ * - care / hero = good days (no riding, no chains)
+ * - ride = elephants carrying people
+ * - saddle = elephants chained in habitat
+ */
 export const PHOTOS = {
   hero: "/hero.jpg",
-  problem: "/saddle-1.jpg",
-  problemB: "/saddle-2.jpg",
-  problemC: "/saddle-3.jpg",
   about: "/care-4.jpg",
   campaign: "/care-1.jpg",
   feed: "/care-1.jpg",
@@ -97,11 +99,33 @@ export const GALLERY_ITEMS = [
   { src: "/care-11.jpg", title: "Home ground", caption: "Where this project lives.", wide: false },
 ] as const;
 
-/** Shown only in the “problem” section */
+/** Shown only in problem sections — not in gallery / experiences */
 export const PROBLEM_PHOTOS = [
-  { src: "/saddle-1.jpg", label: "Still common in tourist riding work" },
-  { src: "/saddle-2.jpg", label: "Heavy use for visitor rides" },
-  { src: "/saddle-3.jpg", label: "This is what we want to change" },
+  {
+    src: "/ride-1.jpg",
+    kind: "ride" as const,
+    label: "Riding — elephants made to carry people",
+  },
+  {
+    src: "/ride-2.jpg",
+    kind: "ride" as const,
+    label: "Riding — still sold as a tourist activity",
+  },
+  {
+    src: "/saddle-1.jpg",
+    kind: "chain" as const,
+    label: "Chained in habitat between work",
+  },
+  {
+    src: "/saddle-2.jpg",
+    kind: "chain" as const,
+    label: "Chained — little room to move or rest",
+  },
+  {
+    src: "/saddle-3.jpg",
+    kind: "chain" as const,
+    label: "Chained life is what we want to end",
+  },
 ] as const;
 
 export const HOME_STRIP = [

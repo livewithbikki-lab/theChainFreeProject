@@ -58,15 +58,18 @@ export default function HomePage() {
           <div className="section-head">
             <h2>The problem we see</h2>
             <p>
-              In Sauraha, many elephants used for tourism still spend long hours
-              under saddles. Between rides they are often kept on chains. Guests
-              get a photo. The elephant gets a hard day.
+              In Sauraha, many elephants used for tourism still carry people for
+              hours. When they are not working, they are often kept on chains in
+              their habitat. Guests get a photo. The elephant gets a hard day.
             </p>
           </div>
 
           <div className="problem-grid">
             {PROBLEM_PHOTOS.map((p) => (
-              <figure key={p.src} className="problem-card">
+              <figure
+                key={p.src}
+                className={`problem-card problem-${p.kind}`}
+              >
                 <img src={p.src} alt={p.label} />
                 <figcaption>{p.label}</figcaption>
               </figure>

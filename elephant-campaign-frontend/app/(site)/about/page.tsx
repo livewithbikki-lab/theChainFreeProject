@@ -50,11 +50,17 @@ export default function AboutPage() {
 
           <div className="section-head">
             <h2>What we are pushing against</h2>
-            <p>Tourist riding is still common. These photos show that reality.</p>
+            <p>
+              Two problems go together: elephants forced to carry riders, and
+              elephants left chained in their habitat when the work day pauses.
+            </p>
           </div>
           <div className="problem-grid" style={{ marginBottom: "2.5rem" }}>
             {PROBLEM_PHOTOS.map((p) => (
-              <figure key={p.src} className="problem-card">
+              <figure
+                key={p.src}
+                className={`problem-card problem-${p.kind}`}
+              >
                 <img src={p.src} alt={p.label} />
                 <figcaption>{p.label}</figcaption>
               </figure>
