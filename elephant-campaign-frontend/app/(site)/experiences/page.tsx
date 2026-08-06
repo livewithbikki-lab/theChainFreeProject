@@ -16,7 +16,7 @@ export default function ExperiencesPage() {
           <h1>Experiences</h1>
           <p>
             Ride-free activities in Sauraha. You meet the elephants without
-            sitting on them.
+            sitting on them. What you pay goes to their care.
           </p>
         </div>
       </section>
@@ -30,6 +30,14 @@ export default function ExperiencesPage() {
               A lot of people only know elephant tourism as a ride. That is not
               what we offer. You walk nearby, help with food, watch bathing, or
               join a work day with the team.
+            </p>
+            <p>
+              <strong>
+                Money collected from these ethical experiences goes directly to
+                the fund for elephant welfare and the sanctuary.
+              </strong>{" "}
+              Food, care, shelter, and the long-term work — not pocketed as a
+              normal tour markup.
             </p>
             <p>
               Groups are kept small. We do not do hook shows or forced photo
@@ -54,6 +62,13 @@ export default function ExperiencesPage() {
           </div>
 
           <div className="prose" style={{ marginTop: "2.5rem" }}>
+            <h2>Where your fee goes</h2>
+            <p>
+              Experience fees support daily welfare and the sanctuary fund:
+              fodder, medical needs, shelter, and mahout work tied to proper
+              care. When you book with us, you are funding the model — not a
+              ride.
+            </p>
             <h2>Booking</h2>
             <p>
               Send us your dates, how many people, and what you want to do. We

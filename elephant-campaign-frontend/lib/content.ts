@@ -167,7 +167,7 @@ export const MISSION_PILLARS = [
   },
   {
     title: "Visitor experiences",
-    text: "Offer simple ride-free activities that teach people a better way to meet elephants.",
+    text: "Offer simple ride-free activities. Money from these visits goes straight into elephant welfare and the sanctuary fund.",
   },
 ] as const;
 

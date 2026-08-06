@@ -40,6 +40,11 @@ export default function CampaignPage() {
               </p>
 
               <h2>Where the money goes</h2>
+              <p>
+                Direct donations help the rescue. Money from ethical visitor
+                experiences also goes straight into the same welfare and
+                sanctuary fund — food, care, shelter, and the long-term work.
+              </p>
               <ul>
                 <li>Cost of releasing the elephant from commercial work</li>
                 <li>Vet checks and treatment</li>

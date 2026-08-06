@@ -116,7 +116,8 @@ export default function HomePage() {
             <h2>Visit without riding</h2>
             <p>
               If you come, you stay on the ground. Small groups. Clear rules.
-              The elephant’s comfort comes first.
+              The elephant’s comfort comes first. Money from these visits goes
+              directly to elephant welfare and the sanctuary fund.
             </p>
           </div>
           <div className="card-grid">
@@ -172,8 +173,9 @@ export default function HomePage() {
                 checks, food, shelter, and pay for the people looking after her.
               </p>
               <p>
-                Campaign money is for rescue and care. If you want details on
-                how funds are used, just ask us.
+                Donations and income from ethical experiences both go toward
+                welfare and sanctuary work. If you want details on how funds are
+                used, just ask us.
               </p>
             </div>
             <CampaignProgress />

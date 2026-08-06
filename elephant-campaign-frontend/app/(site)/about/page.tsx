@@ -75,7 +75,8 @@ export default function AboutPage() {
               A place and a way of working where elephants can move more freely,
               get proper food and medical care, and meet visitors without
               carrying them. Guests still get a real experience. The elephant
-              gets a better day.
+              gets a better day. Fees from those visits go directly to welfare
+              and the sanctuary fund.
             </p>
 
             <div className="value-grid" style={{ margin: "1.5rem 0 2rem" }}>
