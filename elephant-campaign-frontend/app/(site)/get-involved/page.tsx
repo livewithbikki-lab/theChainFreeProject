@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import VolunteerForm from "@/components/VolunteerForm";
-import { WHATSAPP_URL } from "@/lib/content";
+import ContactChannels from "@/components/ContactChannels";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact The Chain Free Project to volunteer, book a visit, or support the rescue fund.",
+    "Contact The Chain Free Project on WhatsApp or WeChat. Volunteer, book a visit, or support the rescue fund.",
 };
 
 export default function GetInvolvedPage() {
@@ -23,18 +23,16 @@ export default function GetInvolvedPage() {
         <div className="container split">
           <div className="prose">
             <p>
-              Use the form if you want to volunteer, book an experience, or send
-              a longer message. Include dates if you have them. We will reply by
-              email or WhatsApp.
+              Use the form for longer messages, or chat with us directly.
+              Include dates if you want to visit.
             </p>
             <p>
-              If it is easier,{" "}
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                message us on WhatsApp
-              </a>
-              . Short questions are fine.
+              <strong>WhatsApp</strong> for most guests.{" "}
+              <strong>WeChat (微信)</strong> if you are in China or prefer
+              WeChat — different number from WhatsApp.
             </p>
-            <p>
+            <ContactChannels />
+            <p style={{ marginTop: "1.25rem" }}>
               We are a small team, so replies can take a little time. We do read
               everything.
             </p>

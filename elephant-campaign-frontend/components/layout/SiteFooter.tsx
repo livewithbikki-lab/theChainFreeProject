@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { NAV_ITEMS, SITE, WHATSAPP_URL } from '@/lib/content';
+import { NAV_ITEMS, SITE, WHATSAPP_DISPLAY, WHATSAPP_URL } from '@/lib/content';
 
 export default function SiteFooter() {
   return (
@@ -10,10 +10,12 @@ export default function SiteFooter() {
           <p>
             Chain-free, ride-free elephant work in Sauraha, Chitwan, Nepal.
           </p>
-          <p>
+          <p className="footer-contacts">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-              WhatsApp
+              WhatsApp: {WHATSAPP_DISPLAY}
             </a>
+            <br />
+            <span>WeChat 微信: {SITE.wechat}</span>
           </p>
         </div>
         <div>

@@ -3,11 +3,18 @@ export const SITE = {
   tagline: "Chain-free elephant care in Sauraha, Chitwan",
   location: "Sauraha, Chitwan · Nepal",
   whatsapp: "9779865345753",
+  /** WeChat ID or phone — for Chinese-speaking guests */
+  wechat: "+977-9708063226",
   url: "https://elephant-campaign.vercel.app",
 };
 
 export const WHATSAPP_URL = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(
   "Hi, I want to know more about The Chain Free Project."
+)}`;
+
+export const WHATSAPP_DISPLAY = `+${SITE.whatsapp.replace(
+  /^(\d{3})(\d+)$/,
+  "$1 $2"
 )}`;
 
 export const NAV_ITEMS = [
