@@ -46,7 +46,7 @@ export const EXPERIENCES = [
     id: "feed-prep",
     title: "Feed prep",
     duration: "About 1.5 hours",
-    image: "/elephant-2.jpg",
+    image: "/elephant-5.jpg",
     summary:
       "Help make food bundles with grass, salt, and molasses, then feed the elephants with the mahouts.",
   },
@@ -54,7 +54,7 @@ export const EXPERIENCES = [
     id: "river-bath",
     title: "River bathing",
     duration: "About 1 hour",
-    image: "/elephant-3.jpg",
+    image: "/elephant-6.jpg",
     summary:
       "Watch elephants bathe in the Rapti from a safe distance. Good for photos if you keep quiet and give them space.",
   },
@@ -62,7 +62,7 @@ export const EXPERIENCES = [
     id: "volunteer",
     title: "Volunteer day",
     duration: "Half day or longer",
-    image: "/elephant-5.jpg",
+    image: "/elephant-7.jpg",
     summary:
       "Help with daily work: fodder, cleaning, shelter tasks. Real work, not a show.",
   },
@@ -71,33 +71,48 @@ export const EXPERIENCES = [
 export const GALLERY_ITEMS = [
   {
     src: "/elephant-1.jpg",
-    title: "In the forest",
-    caption: "Moving and feeding without a timetable.",
+    title: "On site",
+    caption: "From our work in Sauraha.",
   },
   {
     src: "/elephant-2.jpg",
-    title: "Making food",
-    caption: "Daily feed prep with the team.",
+    title: "Daily care",
+    caption: "Time with the elephants.",
   },
   {
     src: "/elephant-3.jpg",
-    title: "At the river",
-    caption: "Bathing in the Rapti.",
+    title: "Around the shelter",
+    caption: "Ordinary days, real work.",
   },
   {
     src: "/elephant-4.jpg",
-    title: "With mahouts",
-    caption: "Care based on training and trust.",
+    title: "With the herd",
+    caption: "Close, calm encounters.",
   },
   {
     src: "/elephant-5.jpg",
-    title: "Volunteers",
-    caption: "Extra hands on ordinary days.",
+    title: "Hands-on help",
+    caption: "Feeding and care routines.",
   },
   {
     src: "/elephant-6.jpg",
-    title: "In Sauraha",
-    caption: "Talking with people about ride-free tourism.",
+    title: "Outdoors",
+    caption: "Space to move and rest.",
+  },
+  {
+    src: "/elephant-7.jpg",
+    title: "Field work",
+    caption: "Mahouts and volunteers.",
+  },
+  {
+    src: "/elephant-8.jpg",
+    title: "Quiet moments",
+    caption: "No show. Just the animals.",
+  },
+  {
+    src: "/elephant-9.jpg",
+    title: "Sauraha",
+    caption: "Where this project lives.",
   },
 ] as const;
 
