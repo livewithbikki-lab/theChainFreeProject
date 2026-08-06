@@ -42,9 +42,10 @@ export default function SecondarySidebar() {
         </aside>
 
         <aside className="widget">
-          <h1 className="widget-title">Location</h1>
+          <h1 className="widget-title">Where we are</h1>
           <p className="widget-text">
-            Sauraha, Chitwan National Park buffer zone, Nepal.
+            Sauraha, at the edge of Chitwan National Park — where jungle, river,
+            and hope meet.
           </p>
         </aside>
       </div>

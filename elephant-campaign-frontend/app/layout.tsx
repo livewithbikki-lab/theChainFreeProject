@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
 
@@ -14,9 +14,17 @@ export const metadata: Metadata = {
     template: "%s | The Chain Free Project",
   },
   description:
-    "A volunteer-driven campaign for chain-free, ride-free elephant welfare in Sauraha, Chitwan, Nepal.",
+    "Join The Chain Free Project in Sauraha, Chitwan — rescuing working elephants, ending chains and saddles, and building a kinder future with local mahouts.",
   keywords:
     "elephant sanctuary, nepal, ethical tourism, chain free, wildlife conservation, volunteer, sauraha, chitwan",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+  themeColor: "#000000",
 };
 
 export default function RootLayout({

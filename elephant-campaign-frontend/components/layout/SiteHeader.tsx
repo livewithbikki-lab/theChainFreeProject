@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NAV_ITEMS, SITE } from '@/lib/content';
 
 export default function SiteHeader() {
@@ -14,37 +14,73 @@ export default function SiteHeader() {
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href);
 
+  useEffect(() => {
+    setMenuOpen(false);
+    setSearchOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMenuOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
   return (
     <header className="site-header">
       <div className="header-main">
         <h1 className="site-title">
-          <Link href="/">{SITE.name}</Link>
+          <Link href="/" onClick={() => setMenuOpen(false)}>
+            {SITE.name}
+          </Link>
         </h1>
 
-        <button
-          type="button"
-          className={`search-toggle${searchOpen ? ' active' : ''}`}
-          aria-expanded={searchOpen}
-          aria-controls="search-container"
-          onClick={() => setSearchOpen((v) => !v)}
-        >
-          <span className="sr-only">Search</span>
-          <span aria-hidden="true">⌕</span>
-        </button>
+        <div className="header-actions">
+          <button
+            type="button"
+            className={`search-toggle${searchOpen ? ' active' : ''}`}
+            aria-expanded={searchOpen}
+            aria-controls="search-container"
+            onClick={() => {
+              setSearchOpen((v) => !v);
+              setMenuOpen(false);
+            }}
+          >
+            <span className="sr-only">Search</span>
+            <span aria-hidden="true">⌕</span>
+          </button>
 
-        <nav className="primary-navigation" aria-label="Primary">
           <button
             type="button"
             className="menu-toggle"
             aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((v) => !v)}
+            aria-controls="primary-menu"
+            onClick={() => {
+              setMenuOpen((v) => !v);
+              setSearchOpen(false);
+            }}
           >
-            <span className="sr-only">Primary Menu</span>
-            <span aria-hidden="true">☰</span>
+            <span className="sr-only">{menuOpen ? 'Close menu' : 'Open menu'}</span>
+            <span aria-hidden="true">{menuOpen ? '✕' : '☰'}</span>
           </button>
-          <ul className={`nav-menu${menuOpen ? ' is-open' : ''}`}>
+        </div>
+
+        <nav className="primary-navigation" aria-label="Primary">
+          <ul
+            id="primary-menu"
+            className={`nav-menu${menuOpen ? ' is-open' : ''}`}
+          >
             {NAV_ITEMS.map((item) => (
-              <li key={item.href} className={isActive(item.href) ? 'current' : undefined}>
+              <li
+                key={item.href}
+                className={isActive(item.href) ? 'current' : undefined}
+              >
                 <Link href={item.href} onClick={() => setMenuOpen(false)}>
                   {item.label}
                 </Link>
@@ -53,6 +89,14 @@ export default function SiteHeader() {
           </ul>
         </nav>
       </div>
+
+      <button
+        type="button"
+        className={`nav-backdrop${menuOpen ? ' is-open' : ''}`}
+        aria-label="Close menu"
+        tabIndex={menuOpen ? 0 : -1}
+        onClick={() => setMenuOpen(false)}
+      />
 
       <div
         id="search-container"
@@ -75,6 +119,8 @@ export default function SiteHeader() {
                 placeholder="Search …"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
+                enterKeyHint="search"
+                autoComplete="off"
               />
             </label>
           </form>

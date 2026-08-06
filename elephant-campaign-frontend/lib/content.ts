@@ -1,6 +1,6 @@
 export const SITE = {
   name: "The Chain Free Project",
-  tagline: "Ethical elephant welfare in Sauraha, Chitwan",
+  tagline: "Where elephants walk free in Sauraha, Chitwan",
   location: "Sauraha, Chitwan • Nepal",
   whatsapp: "9779865345753",
 };
@@ -16,23 +16,23 @@ export const NAV_ITEMS = [
 export const RECENT_ACTIVITIES = [
   {
     href: "/campaign",
-    title: "Elephant Rescue Fund — active pledge",
+    title: "A rescue is underway — every gift brings freedom closer",
   },
   {
     href: "/about",
-    title: "Building a chain-free sanctuary model in Sauraha",
+    title: "Meet the dream: a chain-free home beside the jungle",
   },
   {
     href: "/gallery",
-    title: "Forest foraging and river bathing updates",
+    title: "Morning light, river baths, and quiet forest walks",
   },
   {
     href: "/get-involved",
-    title: "Volunteer openings with local mahouts",
+    title: "Walk with us — volunteer and visitor openings",
   },
   {
     href: "/campaign",
-    title: "Hands-off visitor education programme",
+    title: "Tourism without saddles: a kinder way to meet elephants",
   },
 ] as const;
 
@@ -40,36 +40,36 @@ export const HOME_POSTS = [
   {
     href: "/campaign",
     category: "Campaign",
-    title: "Help liberate a working tourist elephant",
+    title: "One elephant. One chance to walk free.",
     excerpt:
-      "100% of contributions go directly to rescue, veterinary care, and lifetime shelter support for elephants freed from commercial riding tours in Sauraha.",
+      "Somewhere in Sauraha, a working elephant still spends long days under a saddle and heavy chains. Your support can rewrite that story — forever.",
     image: "/elephant-1.jpg",
     featured: true,
   },
   {
     href: "/about",
     category: "About",
-    title: "Why elephants belong free of chains",
+    title: "Imagine a place where no chain is needed",
     excerpt:
-      "We work with local mahouts to replace heavy restraints and saddles with cooperative care, forest grazing, and ethical, observant tourism.",
+      "We are building a sanctuary where elephants forage, bathe, and rest as nature intended — and where local mahouts thrive through care, not control.",
     image: "/elephant-2.jpg",
     featured: true,
   },
   {
     href: "/gallery",
     category: "Gallery",
-    title: "Life beyond the saddle",
+    title: "This is what freedom looks like",
     excerpt:
-      "Photos from natural grazing habitats, feed preparation, Rapti River bathing, and community conservation outreach.",
+      "Dust on trunks. Water sparkling on wrinkled skin. Quiet footsteps through green forest. See the moments that make this work worth everything.",
     image: "/elephant-3.jpg",
     featured: true,
   },
   {
     href: "/get-involved",
     category: "Volunteer",
-    title: "Join our conservation team",
+    title: "You do not have to watch from afar",
     excerpt:
-      "Assist with shelter upkeep, fodder harvesting, visitor education, and advocacy for ride-free tourism in Chitwan.",
+      "Come prepare food, walk beside giants, learn from mahouts, and leave knowing you helped build something kinder in Chitwan.",
     image: "/elephant-4.jpg",
     featured: false,
   },
@@ -78,44 +78,44 @@ export const HOME_POSTS = [
 export const GALLERY_ITEMS = [
   {
     src: "/elephant-1.jpg",
-    title: "Foraging in the Forest",
-    subtitle: "Natural Grazing Habitats",
+    title: "Morning in the forest",
+    subtitle: "Where they choose the path",
     description:
-      "Rescued elephants exploring jungle habitats freely without the pressure of tourism.",
+      "No route. No hurry. Just an elephant moving through green light, tasting leaves, and remembering what wild feels like.",
   },
   {
     src: "/elephant-2.jpg",
-    title: "Feed Preparation",
-    subtitle: "Nutritional Care",
+    title: "Made with care",
+    subtitle: "Food prepared by hand",
     description:
-      "Volunteers and mahouts crafting grass and molasses bundles to sustain elephant health.",
+      "Grass, salt, and molasses rolled into nourishing bundles — small acts of love that keep a giant strong.",
   },
   {
     src: "/elephant-3.jpg",
-    title: "Rapti River Bathing",
-    subtitle: "Observation at a Distance",
+    title: "Rapti River joy",
+    subtitle: "Water, sun, and splash",
     description:
-      "Watching elephants splash and swim naturally from a safe, non-intrusive distance.",
+      "Watch from a respectful distance as elephants sink into cool river water — pure play, pure peace.",
   },
   {
     src: "/elephant-4.jpg",
-    title: "Mahout Training",
-    subtitle: "Empowerment & Education",
+    title: "A new kind of partnership",
+    subtitle: "Mahouts as guardians",
     description:
-      "Training local handlers in positive-reinforcement techniques to phase out heavy hooks.",
+      "Training rooted in trust and positive reinforcement — so care replaces force, and pride replaces pressure.",
   },
   {
     src: "/elephant-5.jpg",
-    title: "Volunteer Work",
-    subtitle: "Community Collaboration",
+    title: "Many hands, one purpose",
+    subtitle: "Volunteers at work",
     description:
-      "Community builders assisting in shelter upkeep, trail building, and local advocacy.",
+      "Shelter upkeep, fodder harvest, trail care — ordinary work that builds an extraordinary future.",
   },
   {
     src: "/elephant-6.jpg",
-    title: "Conservation Outreach",
-    subtitle: "Ethical Tourism",
+    title: "Changing the story of tourism",
+    subtitle: "Ride-free Sauraha",
     description:
-      "Engaging tourist agencies in Sauraha to promote ride-free and chain-free practices.",
+      "Conversations with guides and lodges that plant a simple idea: the best elephant encounter needs no saddle.",
   },
 ] as const;

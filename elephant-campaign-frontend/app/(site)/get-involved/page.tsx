@@ -3,6 +3,8 @@ import VolunteerForm from '@/components/VolunteerForm';
 
 export const metadata: Metadata = {
   title: 'Get involved',
+  description:
+    'Volunteer, book an ethical visit, or support The Chain Free Project in Sauraha, Chitwan.',
 };
 
 export default function GetInvolvedPage() {
@@ -13,10 +15,20 @@ export default function GetInvolvedPage() {
       </header>
       <div className="entry-content" style={{ maxWidth: '100%' }}>
         <p style={{ textAlign: 'left' }}>
-          The Chain Free Project welcomes volunteers, visitors seeking ethical
-          elephant experiences, and supporters who want to help free working
-          elephants in Sauraha. Fill in the form below and our team will respond
-          as soon as possible.
+          Some people change a place by visiting gently. Others stay and work
+          with their hands. Many help from far away with a message of support.
+          All of them matter here.
+        </p>
+        <p style={{ textAlign: 'left' }}>
+          If you want to <strong>volunteer</strong> with mahouts,{' '}
+          <strong>book a ride-free experience</strong>, or simply tell us you
+          stand with chain-free elephants — we are listening. Share a little
+          about yourself below. We will write back with warmth and clear next
+          steps.
+        </p>
+        <p style={{ textAlign: 'left' }}>
+          Come as you are. Leave knowing you helped an elephant’s world grow
+          softer.
         </p>
         <VolunteerForm />
       </div>

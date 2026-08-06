@@ -3,6 +3,8 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'About us',
+  description:
+    'Learn how The Chain Free Project is building a kinder future for elephants and mahouts in Sauraha, Chitwan.',
 };
 
 export default function AboutPage() {
@@ -13,51 +15,78 @@ export default function AboutPage() {
       </header>
       <div className="entry-content">
         <p>
-          <strong>The Chain Free Project</strong> is a volunteer-driven,
-          non-profit conservation initiative based in Sauraha, Chitwan, Nepal.
-          Our aim is to end the use of heavy chains and riding saddles on working
-          elephants, and to build a sustainable, ethical sanctuary model that
-          protects elephants while supporting local mahout livelihoods.
+          <strong>The Chain Free Project</strong> began with a feeling many
+          visitors to Sauraha quietly share: wonder mixed with unease. Wonder at
+          the grace of elephants. Unease at the chains that hold them still
+          between rides.
         </p>
         <p>
-          For decades, tourist elephants in the Chitwan area have lived under
-          commercial pressure—long hours under saddles, restricted movement, and
-          limited natural behaviour. We believe elephants belong free to forage,
-          bathe, socialise, and rest without restraint.
+          We are a volunteer-driven, non-profit initiative working beside
+          Chitwan National Park. Our promise is simple and bold —{' '}
+          <strong>elephants should never need heavy chains or saddles to
+          “belong” in tourism</strong>. They deserve forest paths, river baths,
+          rest, friendship, and space to simply be elephants.
         </p>
         <p>
-          Our work focuses on three pillars: rescuing working elephants from
-          commercial riding operations; training and employing mahouts in
-          positive-reinforcement, cooperative care; and offering visitors
-          educational, hands-off experiences that inspire conservation without
-          stressing the animals.
+          For years, many working elephants in this region have lived under
+          commercial pressure: long hours, limited movement, and little room for
+          natural behaviour. We are here to change that — not by pointing
+          fingers, but by building something better.
         </p>
         <p>
-          We are a small team of conservation advocates, local handlers, and
-          community partners working at the edge of Chitwan National Park. Like
-          many grassroots organisations, we grow through volunteers, partners,
-          and supporters who share a simple conviction: tourism should never
-          require chains.
+          Better looks like a lush, chain-free sanctuary. Better looks like
+          mahouts paid fairly and trained in cooperative, positive care. Better
+          looks like visitors who leave smiling because they witnessed freedom —
+          not because they sat on a back that never chose the load.
         </p>
 
-        <h2>Our main fields of work</h2>
+        <h2>What we believe</h2>
+        <p>
+          Compassion and community can grow together. When elephants are free,
+          mahouts can still have dignified work. When visitors choose ethical
+          experiences, Sauraha’s tourism can become something Nepal is even
+          prouder of. Freedom is not a luxury. It is the starting point.
+        </p>
+
+        <h2>How we work</h2>
         <ul>
-          <li>Chain-free elephant sanctuary development</li>
-          <li>Rescue and veterinary rehabilitation of working elephants</li>
-          <li>Mahout training in positive reinforcement care</li>
-          <li>Ride-free visitor education (forest walks, feed prep, bathing observation)</li>
-          <li>Advocacy for ethical wildlife tourism in Sauraha</li>
-          <li>Community livelihoods linked to compassionate elephant care</li>
+          <li>
+            <strong>Rescue &amp; shelter</strong> — helping working elephants
+            leave riding life for permanent, chain-free care
+          </li>
+          <li>
+            <strong>Mahout partnership</strong> — training and employing local
+            handlers as skilled guardians, not controllers
+          </li>
+          <li>
+            <strong>Hands-off experiences</strong> — forest walks, feed
+            preparation, and river observation that never stress the animals
+          </li>
+          <li>
+            <strong>Advocacy</strong> — inviting lodges, guides, and guests to
+            choose ride-free tourism
+          </li>
+          <li>
+            <strong>Community care</strong> — linking elephant welfare to real,
+            sustainable local livelihoods
+          </li>
         </ul>
 
+        <p>
+          We are small on purpose: close to the ground, close to the elephants,
+          close to the people who know them best. Every volunteer, every kind
+          message, every contribution adds one more link of courage to a chain we
+          are determined to break.
+        </p>
+
         <div className="callout">
-          <h3>Want to help?</h3>
+          <h3>This story needs you</h3>
           <p>
-            You can support a rescue, volunteer on site, or book an ethical
-            educational visit.
+            Whether you visit, volunteer, or support a rescue from afar — you
+            become part of a freer Sauraha.
           </p>
           <Link href="/get-involved" className="btn">
-            Get involved
+            Stand with us
           </Link>
         </div>
       </div>

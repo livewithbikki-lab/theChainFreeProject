@@ -5,7 +5,8 @@ export default function SiteFooter() {
     <footer className="site-footer">
       <div className="site-info">
         <p>
-          © {new Date().getFullYear()} {SITE.name}. {SITE.tagline}.
+          © {new Date().getFullYear()} {SITE.name}. Freedom over chains —
+          always.
         </p>
       </div>
     </footer>

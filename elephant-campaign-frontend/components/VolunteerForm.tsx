@@ -125,22 +125,22 @@ export default function VolunteerForm() {
           <p>
             <strong>
               {formType === 'volunteer'
-                ? 'Application received!'
-                : 'Booking request received!'}
+                ? 'You are officially part of the story.'
+                : 'Your visit request is on its way.'}
             </strong>
           </p>
           <p>
             {formType === 'volunteer'
-              ? 'Thank you for joining our campaign. Our team will review your application and reach out shortly.'
-              : 'Thank you. We have received your booking enquiry and will contact you to confirm availability.'}
+              ? 'Thank you for offering your time and heart. We will read your note carefully and reply soon with how we can walk this path together.'
+              : 'Thank you for choosing a kinder way to meet elephants. We will confirm availability and details with you shortly.'}
           </p>
           <button type="button" className="btn" onClick={() => setFormSubmitted(false)}>
-            Submit another request
+            Send another message
           </button>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Full Name</label>
+          <label htmlFor="name">Your name</label>
           <input
             id="name"
             type="text"
@@ -148,14 +148,14 @@ export default function VolunteerForm() {
             value={formData.name}
             onChange={handleInputChange}
             required
-            placeholder="Your name"
+            placeholder="How should we greet you?"
             className={formErrors.name ? 'field-error' : undefined}
           />
           {formErrors.name && (
             <p className="error-text">{formErrors.name[0]}</p>
           )}
 
-          <label htmlFor="email">Email Address</label>
+          <label htmlFor="email">Email</label>
           <input
             id="email"
             type="email"
@@ -163,21 +163,21 @@ export default function VolunteerForm() {
             value={formData.email}
             onChange={handleInputChange}
             required
-            placeholder="name@example.com"
+            placeholder="Where can we reach you?"
             className={formErrors.email ? 'field-error' : undefined}
           />
           {formErrors.email && (
             <p className="error-text">{formErrors.email[0]}</p>
           )}
 
-          <label htmlFor="contact_handle">WhatsApp or Social (Optional)</label>
+          <label htmlFor="contact_handle">WhatsApp or social (optional)</label>
           <input
             id="contact_handle"
             type="text"
             name="contact_handle"
             value={formData.contact_handle}
             onChange={handleInputChange}
-            placeholder="e.g. +977 980… or @yourhandle"
+            placeholder="A quick way to say hello"
             className={formErrors.contact_handle ? 'field-error' : undefined}
           />
           {formErrors.contact_handle && (
@@ -186,7 +186,7 @@ export default function VolunteerForm() {
 
           {formType === 'booking' && (
             <>
-              <label htmlFor="date">Preferred Date</label>
+              <label htmlFor="date">When would you love to visit?</label>
               <input
                 id="date"
                 type="date"
@@ -201,7 +201,7 @@ export default function VolunteerForm() {
                 <p className="error-text">{formErrors.date[0]}</p>
               )}
 
-              <label htmlFor="guests">Number of Guests</label>
+              <label htmlFor="guests">How many kind travellers?</label>
               <input
                 id="guests"
                 type="number"
@@ -222,8 +222,8 @@ export default function VolunteerForm() {
 
           <label htmlFor="message">
             {formType === 'volunteer'
-              ? 'How can you help?'
-              : 'Notes or comments'}
+              ? 'Tell us your spark'
+              : 'Anything we should know?'}
           </label>
           <textarea
             id="message"
@@ -233,8 +233,8 @@ export default function VolunteerForm() {
             rows={4}
             placeholder={
               formType === 'volunteer'
-                ? 'Tell us why you want to support chain-free elephant welfare…'
-                : 'Any requests or details…'
+                ? 'Skills, timing, dreams for elephants — share whatever feels true…'
+                : 'Special requests, group notes, or questions welcome…'
             }
             className={formErrors.message ? 'field-error' : undefined}
           />
@@ -244,10 +244,10 @@ export default function VolunteerForm() {
 
           <button type="submit" className="btn" disabled={isSubmitting}>
             {isSubmitting
-              ? 'Submitting…'
+              ? 'Sending…'
               : formType === 'volunteer'
-                ? 'Submit application'
-                : 'Send booking enquiry'}
+                ? 'I want to help'
+                : 'Request my visit'}
           </button>
         </form>
       )}
