@@ -3,6 +3,8 @@ import { GALLERY_ITEMS } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Gallery",
+  description:
+    "Photos from chain-free elephant care in Sauraha — forest time, river baths, mahout partnership, and community work.",
 };
 
 export default function GalleryPage() {
@@ -11,7 +13,11 @@ export default function GalleryPage() {
       <section className="page-hero">
         <div className="container">
           <h1>Gallery</h1>
-          <p>Moments from care, forest time, and community work in Sauraha.</p>
+          <p>
+            Not performance shots — quiet proofs that an elephant’s day can hold
+            choice, water, green leaves, and human hands that only mean
+            kindness.
+          </p>
         </div>
       </section>
       <section className="page-body">
@@ -20,7 +26,10 @@ export default function GalleryPage() {
             {GALLERY_ITEMS.map((item) => (
               <figure key={item.src}>
                 <img src={item.src} alt={item.title} />
-                <figcaption>{item.title}</figcaption>
+                <figcaption>
+                  <strong>{item.title}</strong>
+                  {item.caption ? ` — ${item.caption}` : ""}
+                </figcaption>
               </figure>
             ))}
           </div>

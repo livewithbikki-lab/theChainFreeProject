@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description:
-    "Chain-free, ride-free elephant care in Sauraha, Chitwan, Nepal. Support rescue, visit kindly, volunteer with us.",
+    "The Chain Free Project builds chain-free, ride-free elephant care in Sauraha, Chitwan — rescuing working elephants, partnering with mahouts, and welcoming ethical visitors.",
   openGraph: {
     type: "website",
     url: SITE.url,

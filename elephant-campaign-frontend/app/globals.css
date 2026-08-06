@@ -422,7 +422,24 @@ p {
 }
 
 .gallery-grid figcaption {
-  display: none;
+  display: block;
+  padding: 0.65rem 0.15rem 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.gallery-grid figcaption strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.gallery-grid figure {
+  background: transparent;
+}
+
+.gallery-grid figure img {
+  border-radius: 12px;
 }
 
 /* Page hero (inner) */

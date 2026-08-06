@@ -8,8 +8,8 @@ export default function SiteFooter() {
         <div>
           <h3>{SITE.name}</h3>
           <p>
-            A simple campaign for chain-free, ride-free elephant care in
-            Sauraha, Chitwan, Nepal.
+            Building chain-free, ride-free elephant care in Sauraha, Chitwan —
+            with local mahouts, ethical visitors, and a clear rescue mission.
           </p>
           <p>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
@@ -29,7 +29,7 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="container footer-bottom">
-        © {new Date().getFullYear()} {SITE.name}. Freedom over chains.
+        © {new Date().getFullYear()} {SITE.name}. Freedom over chains — always.
       </div>
     </footer>
   );

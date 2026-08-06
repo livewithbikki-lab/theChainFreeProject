@@ -1,10 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { EXPERIENCES, SITE, VALUES } from "@/lib/content";
+import { EXPERIENCES, MISSION_PILLARS, SITE, VALUES } from "@/lib/content";
 import CampaignProgress from "@/components/CampaignProgress";
 
 export const metadata: Metadata = {
   title: "Home",
+  description:
+    "The Chain Free Project builds chain-free, ride-free elephant care in Sauraha, Chitwan — rescue, mahout partnership, and ethical visitor experiences.",
 };
 
 export default function HomePage() {
@@ -12,22 +14,26 @@ export default function HomePage() {
     <>
       <section className="hero">
         <div className="hero-bg">
-          <img src="/elephant-1.jpg" alt="Elephant in natural habitat" />
+          <img src="/elephant-1.jpg" alt="Elephant moving freely near the forest" />
         </div>
         <div className="container hero-content">
           <p className="hero-kicker">{SITE.location}</p>
-          <h1>A refuge built on care, not chains.</h1>
+          <h1>Elephants belong free — not bound for a ride.</h1>
           <p>
-            The Chain Free Project is creating ride-free, chain-free elephant
-            care in Sauraha — with local mahouts, gentle visitor experiences,
-            and a clear rescue mission.
+            In Sauraha, too many working elephants still spend long days under
+            saddles and heavy chains.{" "}
+            <strong style={{ color: "rgba(255,255,255,0.95)", fontWeight: 600 }}>
+              The Chain Free Project
+            </strong>{" "}
+            exists to change that: one rescue, one kinder visitor experience,
+            and one mahout partnership at a time.
           </p>
           <div className="hero-actions">
             <Link href="/campaign" className="btn">
-              Support rescue
+              Help free an elephant
             </Link>
-            <Link href="/experiences" className="btn btn-outline">
-              View experiences
+            <Link href="/about" className="btn btn-outline">
+              Read our mission
             </Link>
           </div>
         </div>
@@ -36,31 +42,62 @@ export default function HomePage() {
       <section className="section section-alt">
         <div className="container split">
           <div className="split-img">
-            <img src="/elephant-2.jpg" alt="Caring for elephants" />
+            <img
+              src="/elephant-2.jpg"
+              alt="Hands preparing food for elephants"
+            />
           </div>
           <div>
             <div className="section-head">
-              <h2>Lifelong care comes first</h2>
+              <h2>Why this work matters</h2>
               <p>
-                We pair ethical visitor experiences with real welfare goals:
-                free movement, good food, veterinary care, and dignity for the
-                people who work with elephants every day.
+                Visitors come to Chitwan hoping to meet giants. Elephants deserve
+                that meeting to be gentle. We are building a model where tourism
+                still thrives — without forcing an animal to carry people for
+                hours, or stand waiting in chains between rides.
+              </p>
+              <p>
+                Our vision is simple and stubborn: a chain-free sanctuary culture
+                in Sauraha, rooted in lifelong care, fair local jobs, and
+                experiences that leave both people and elephants better than
+                before.
               </p>
             </div>
             <Link href="/about" className="btn">
-              About the project
+              Our full mission
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="section" id="experiences">
+      <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2>Park experiences</h2>
+            <h2>How we work</h2>
             <p>
-              Simple, regulated activities. No riding. Small groups. Elephant
-              comfort first.
+              Three pillars guide every decision — from rescue fundraising to
+              how a guest is welcomed on site.
+            </p>
+          </div>
+          <div className="value-grid">
+            {MISSION_PILLARS.map((item) => (
+              <div key={item.title} className="value">
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt" id="experiences">
+        <div className="container">
+          <div className="section-head">
+            <h2>Meet elephants the gentle way</h2>
+            <p>
+              You do not need to ride to feel close. Our experiences are small,
+              calm, and designed around elephant comfort — so your memory is of
+              freedom, not force.
             </p>
           </div>
           <div className="card-grid">
@@ -78,17 +115,24 @@ export default function HomePage() {
             ))}
           </div>
           <p style={{ marginTop: "1.5rem" }}>
-            <Link href="/get-involved" className="btn">
-              Book or enquire
+            <Link href="/experiences" className="btn">
+              Explore experiences
+            </Link>{" "}
+            <Link href="/get-involved" className="btn btn-outline-dark">
+              Book a visit
             </Link>
           </p>
         </div>
       </section>
 
-      <section className="section section-alt">
+      <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2>Our commitments</h2>
+            <h2>Promises we keep</h2>
+            <p>
+              These are not slogans. They are the rules we measure ourselves
+              against — for elephants, mahouts, and every guest who trusts us.
+            </p>
           </div>
           <div className="value-grid">
             {VALUES.map((v) => (
@@ -101,21 +145,48 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section-alt">
         <div className="container split">
           <div>
             <div className="section-head">
-              <h2>Elephant Rescue Fund</h2>
+              <h2>The Elephant Rescue Fund</h2>
               <p>
-                Help free a working tourist elephant into permanent chain-free
-                care. Every contribution supports rescue, health, and shelter.
+                Right now we are raising support to liberate a working tourist
+                elephant from commercial riding life. Your gift becomes
+                negotiation, veterinary healing, daily food, chain-free shelter,
+                and fair pay for the people who will guard her for life.
+              </p>
+              <p>
+                One hundred percent of campaign contributions go toward rescue
+                and care — not empty promises.
               </p>
             </div>
             <CampaignProgress />
           </div>
           <div className="split-img">
-            <img src="/elephant-4.jpg" alt="Rescue campaign" />
+            <img
+              src="/elephant-4.jpg"
+              alt="Mahout and elephant in cooperative care"
+            />
           </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container" style={{ textAlign: "center", maxWidth: "40rem" }}>
+          <h2 style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.2rem)" }}>
+            This story needs more than watchers
+          </h2>
+          <p>
+            Visit kindly. Volunteer. Share the mission. Support a rescue. Whether
+            you live in Nepal or arrive as a guest from far away, you can help
+            write a freer chapter for Sauraha’s elephants.
+          </p>
+          <p style={{ marginTop: "1.25rem" }}>
+            <Link href="/get-involved" className="btn">
+              Join the movement
+            </Link>
+          </p>
         </div>
       </section>
     </>
