@@ -1,10 +1,16 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import type { Metadata } from "next";
+import Link from "next/link";
+import CampaignProgress from "@/components/CampaignProgress";
+import { CAMPAIGN, WHATSAPP_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: 'Campaign',
+  title: "Campaign",
   description:
-    'Support the Elephant Rescue Fund and help free a working tourist elephant in Sauraha, Chitwan.',
+    "Support the Elephant Rescue Fund and help free a working tourist elephant in Sauraha, Chitwan.",
+  openGraph: {
+    title: "Elephant Rescue Fund",
+    images: ["/elephant-1.jpg"],
+  },
 };
 
 export default function CampaignPage() {
@@ -27,26 +33,32 @@ export default function CampaignPage() {
           where it matters — rescue, veterinary healing, food, shelter, and the
           people who will care for her every day.
         </p>
-        <p>
-          Commercial riding keeps elephants busy for guests, but it often keeps
-          them bound. Chains. Hooks. Hours of stillness. We believe Nepal’s
-          elephants deserve a different ending — and we are writing it with
-          anyone willing to help.
-        </p>
+
+        <CampaignProgress />
 
         <div className="callout">
           <h3>Active pledge</h3>
           <p>
-            <strong>Campaign goal:</strong> Rs. 2,000,000
+            <strong>Candidate:</strong> {CAMPAIGN.elephantLabel}
           </p>
           <p>
-            We are finalising rescue arrangements now. Candidate details will be
-            shared as soon as contracts are complete. Your gift does not wait in
-            a vague fund — it becomes freedom, medicine, shade, and care.
+            We are finalising rescue arrangements now. Details will be shared as
+            soon as contracts are complete. Your gift does not wait in a vague
+            fund — it becomes freedom, medicine, shade, and care.
           </p>
-          <Link href="/get-involved" className="btn">
-            Help free an elephant
-          </Link>
+          <div className="progress-actions">
+            <Link href="/get-involved" className="btn">
+              Help free an elephant
+            </Link>
+            <a
+              href={WHATSAPP_URL}
+              className="btn btn-ghost"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp donate path
+            </a>
+          </div>
         </div>
 
         <h2>What your kindness covers</h2>
@@ -79,18 +91,6 @@ export default function CampaignPage() {
           If you have ever looked into an elephant’s eyes and felt something
           larger than words, this is your invitation. Be part of the day a chain
           comes off for good.
-        </p>
-        <p>
-          Ready to help?{' '}
-          <Link href="/get-involved">Send us a message</Link> or reach us on{' '}
-          <a
-            href="https://wa.me/9779865345753?text=Hi!%20I%20want%20to%20support%20The%20Chain%20Free%20Project."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            WhatsApp
-          </a>
-          . We would love to welcome you into this story.
         </p>
       </div>
     </article>

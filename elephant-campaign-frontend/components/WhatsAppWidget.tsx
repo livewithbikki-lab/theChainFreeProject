@@ -1,9 +1,9 @@
-'use client';
+import { WHATSAPP_URL } from '@/lib/content';
 
 export default function WhatsAppWidget() {
   return (
     <a
-      href="https://wa.me/9779865345753?text=Hi!%20I%20want%20to%20know%20more%20about%20The%20Chain%20Free%20Project."
+      href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
       className="wa-widget"
