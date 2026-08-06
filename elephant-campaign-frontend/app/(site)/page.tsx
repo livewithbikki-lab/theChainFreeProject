@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { HeartHandshake, Link2Off, Users } from "lucide-react";
 import {
   EXPERIENCES,
   PROBLEM_PHOTOS,
@@ -7,6 +8,9 @@ import {
   VALUES,
 } from "@/lib/content";
 import CampaignProgress from "@/components/CampaignProgress";
+import ChatLink from "@/components/ChatLink";
+
+const VALUE_ICONS = [Link2Off, HeartHandshake, Users] as const;
 
 export const metadata: Metadata = {
   title: "Home",
@@ -129,12 +133,18 @@ export default function HomePage() {
             <h2>How we work</h2>
           </div>
           <div className="value-grid">
-            {VALUES.map((v) => (
-              <div key={v.title} className="value">
-                <h3>{v.title}</h3>
-                <p>{v.text}</p>
-              </div>
-            ))}
+            {VALUES.map((v, i) => {
+              const Icon = VALUE_ICONS[i] ?? Link2Off;
+              return (
+                <div key={v.title} className="value">
+                  <span className="value-icon" aria-hidden="true">
+                    <Icon size={22} strokeWidth={2} />
+                  </span>
+                  <h3>{v.title}</h3>
+                  <p>{v.text}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -167,9 +177,15 @@ export default function HomePage() {
             Book a program, volunteer, or ask about the fund. WhatsApp or
             WeChat.
           </p>
-          <p>
-            <Link href="/get-involved" className="btn">
-              Contact us
+          <p className="btn-row center-row">
+            <ChatLink variant="whatsapp" className="btn">
+              WhatsApp
+            </ChatLink>
+            <ChatLink variant="wechat" className="btn btn-outline-dark">
+              WeChat
+            </ChatLink>
+            <Link href="/get-involved" className="btn btn-outline-dark">
+              Contact form
             </Link>
           </p>
         </div>

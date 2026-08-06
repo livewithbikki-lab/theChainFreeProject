@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CampaignProgress from "@/components/CampaignProgress";
-import { CAMPAIGN, WHATSAPP_URL } from "@/lib/content";
+import ChatLink from "@/components/ChatLink";
+import { CAMPAIGN } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Campaign",
@@ -49,15 +50,13 @@ export default function CampaignPage() {
                 <li>Food and shelter</li>
                 <li>Mahout pay and training</li>
               </ul>
-              <p>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline-dark"
-                >
+              <p className="btn-row">
+                <ChatLink variant="whatsapp" className="btn btn-outline-dark">
                   WhatsApp
-                </a>{" "}
+                </ChatLink>
+                <ChatLink variant="wechat" className="btn btn-outline-dark">
+                  WeChat
+                </ChatLink>
                 <Link href="/get-involved" className="btn">
                   Contact form
                 </Link>

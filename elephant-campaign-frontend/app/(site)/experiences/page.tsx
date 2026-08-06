@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { EXPERIENCES, WHATSAPP_URL } from "@/lib/content";
+import ChatLink from "@/components/ChatLink";
+import { EXPERIENCES } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Programs",
@@ -68,14 +69,16 @@ export default function ExperiencesPage() {
                     <Link href="/get-involved" className="btn">
                       Book / enquire
                     </Link>
-                    <a
-                      href={WHATSAPP_URL}
+                    <ChatLink
+                      variant="whatsapp"
                       className="btn btn-outline-dark"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      message={`Hi, I want to book: ${exp.title}`}
                     >
                       WhatsApp
-                    </a>
+                    </ChatLink>
+                    <ChatLink variant="wechat" className="btn btn-outline-dark">
+                      WeChat
+                    </ChatLink>
                   </div>
                 </div>
               </article>

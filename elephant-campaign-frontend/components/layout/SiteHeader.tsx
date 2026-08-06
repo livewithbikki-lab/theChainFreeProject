@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS, SITE } from '@/lib/content';
 
 export default function SiteHeader() {
@@ -39,7 +40,11 @@ export default function SiteHeader() {
           aria-label={open ? 'Close menu' : 'Open menu'}
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? '✕' : '☰'}
+          {open ? (
+            <X size={22} strokeWidth={2.25} aria-hidden="true" />
+          ) : (
+            <Menu size={22} strokeWidth={2.25} aria-hidden="true" />
+          )}
         </button>
       </div>
 

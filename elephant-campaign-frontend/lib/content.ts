@@ -7,11 +7,12 @@ export const SITE = {
   url: "https://elephant-campaign.vercel.app",
 };
 
-export const WHATSAPP_URL = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(
+/** SSR-safe web link. Client clicks should use openWhatsApp() for app handoff. */
+export const WHATSAPP_URL = `https://wa.me/${SITE.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(
   "Hi, I want to know more about The Chain Free Project."
 )}`;
 
-export const WHATSAPP_DISPLAY = `+${SITE.whatsapp.replace(
+export const WHATSAPP_DISPLAY = `+${SITE.whatsapp.replace(/\D/g, "").replace(
   /^(\d{3})(\d+)$/,
   "$1 $2"
 )}`;

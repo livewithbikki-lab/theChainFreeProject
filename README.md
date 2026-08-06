@@ -2,7 +2,7 @@
 
 Welcome to the **Chain Free Project**, a campaign dedicated to ethical elephant welfare. This platform serves as a landing page to raise awareness, collect volunteer applications, and drive fundraising for the liberation of working elephants in Sauraha, Nepal.
 
-![The Chain Free Project Logo](elephant-campaign-frontend/public/elephant-1.jpg)
+![The Chain Free Project](elephant-campaign-frontend/public/hero.jpg)
 
 ## 🌟 Features
 - **Stunning UI**: Premium glassmorphism design with a lush, dynamic jungle aesthetic.

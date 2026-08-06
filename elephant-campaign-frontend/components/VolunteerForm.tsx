@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { CheckCircle2, Send } from 'lucide-react';
 import { getApiUrl } from '@/lib/api';
 
 export default function VolunteerForm() {
@@ -105,8 +106,11 @@ export default function VolunteerForm() {
 
       {formSubmitted ? (
         <div className="form-success">
-          <p>
-            <strong>Got it.</strong> Thanks — we will get back to you.
+          <p className="form-success-row">
+            <CheckCircle2 size={20} strokeWidth={2} aria-hidden="true" />
+            <span>
+              <strong>Got it.</strong> Thanks — we will get back to you.
+            </span>
           </p>
           <button type="button" className="btn" onClick={() => setFormSubmitted(false)}>
             Send another
@@ -188,6 +192,7 @@ export default function VolunteerForm() {
           />
 
           <button type="submit" className="btn" disabled={isSubmitting}>
+            <Send size={16} strokeWidth={2.25} aria-hidden="true" />
             {isSubmitting ? 'Sending…' : 'Send'}
           </button>
         </form>
