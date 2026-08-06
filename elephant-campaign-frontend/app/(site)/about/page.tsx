@@ -42,7 +42,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="split-img">
-              <img src="/care-1.jpg" alt="Care on site" />
+              <img src="/care-1.jpg" alt="Care on site" loading="lazy" />
             </div>
           </div>
 

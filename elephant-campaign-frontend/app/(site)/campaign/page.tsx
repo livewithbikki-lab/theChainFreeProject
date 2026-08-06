@@ -65,7 +65,7 @@ export default function CampaignPage() {
             </div>
             <div>
               <div className="split-img" style={{ marginBottom: "1.25rem" }}>
-                <img src="/care-1.jpg" alt="" />
+                <img src="/care-1.jpg" alt="Care on site" loading="lazy" />
               </div>
               <CampaignProgress />
             </div>

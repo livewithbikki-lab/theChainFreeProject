@@ -32,20 +32,17 @@ export const CAMPAIGN = {
   elephantLabel: "Rescue candidate (details soon)",
 };
 
-const PHOTOS = {
-  hero: "/hero.jpg",
-  care: "/care-1.jpg",
-  careB: "/care-2.jpg",
-  careC: "/care-4.jpg",
+/** Best photos only — keep public/ in sync with this list */
+export const PHOTOS = {
+  heroTop: "/hero-top.jpg",
+  river: "/hero.jpg",
+  feed: "/care-1.jpg",
+  site: "/care-2.jpg",
+  people: "/care-4.jpg",
   ride: "/ride-1.jpg",
-  chain: "/saddle-2.jpg",
+  chained: "/chained-habitat.jpg",
 } as const;
 
-/**
- * Programs styled like ethical sanctuaries in Sauraha:
- * clear name, time, duration, what you do, price note, book CTA.
- * Fees go to welfare / sanctuary fund.
- */
 export const EXPERIENCES = [
   {
     id: "visit",
@@ -53,7 +50,7 @@ export const EXPERIENCES = [
     time: "By appointment",
     duration: "30–45 minutes",
     price: "Price on request",
-    image: PHOTOS.careC,
+    image: PHOTOS.people,
     intro:
       "A short, calm visit to meet the elephants and learn how chain-free care works here.",
     activities: [
@@ -70,7 +67,7 @@ export const EXPERIENCES = [
     time: "Morning or late afternoon",
     duration: "About 2 hours",
     price: "Price on request",
-    image: PHOTOS.careB,
+    image: PHOTOS.site,
     intro:
       "Walk nearby as the elephants move through natural paths. No riding. Guides and mahouts stay with you.",
     activities: [
@@ -87,7 +84,7 @@ export const EXPERIENCES = [
     time: "Depends on weather and river",
     duration: "About 1 hour",
     price: "Price on request",
-    image: "/hero.jpg",
+    image: PHOTOS.river,
     intro:
       "Watch elephants bathe in the river. You can stay back and observe, or join scrubbing only if the team says it is safe and wanted that day.",
     activities: [
@@ -104,7 +101,7 @@ export const EXPERIENCES = [
     time: "By appointment",
     duration: "About 1–1.5 hours",
     price: "Price on request",
-    image: PHOTOS.care,
+    image: PHOTOS.feed,
     intro:
       "Help prepare food and feed the elephants with the team. Includes simple treats made on site when available.",
     activities: [
@@ -121,7 +118,7 @@ export const EXPERIENCES = [
     time: "Flexible",
     duration: "Half day or longer",
     price: "Contribution-based",
-    image: PHOTOS.careC,
+    image: PHOTOS.people,
     intro:
       "Join real daily work: fodder, cleaning, shelter tasks. Not a photo package — actual help.",
     activities: [
@@ -135,10 +132,10 @@ export const EXPERIENCES = [
 ] as const;
 
 export const GALLERY_ITEMS = [
-  { src: "/hero.jpg", title: "River", caption: "Bath and rest time." },
-  { src: PHOTOS.care, title: "Feeding", caption: "Daily care." },
-  { src: PHOTOS.careB, title: "On site", caption: "Room to move." },
-  { src: PHOTOS.careC, title: "With the team", caption: "Calm visits only." },
+  { src: PHOTOS.river, title: "River", caption: "Bath and rest time." },
+  { src: PHOTOS.feed, title: "Feeding", caption: "Daily care." },
+  { src: PHOTOS.site, title: "On site", caption: "Room to move." },
+  { src: PHOTOS.people, title: "With the team", caption: "Calm visits only." },
 ] as const;
 
 export const PROBLEM_PHOTOS = [
@@ -148,7 +145,7 @@ export const PROBLEM_PHOTOS = [
     label: "Riding — elephants made to carry tourists",
   },
   {
-    src: PHOTOS.chain,
+    src: PHOTOS.chained,
     kind: "chain" as const,
     label: "Chained in habitat when not working",
   },

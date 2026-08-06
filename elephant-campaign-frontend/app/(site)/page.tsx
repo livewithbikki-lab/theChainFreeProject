@@ -19,7 +19,7 @@ export default function HomePage() {
     <>
       <section className="hero">
         <div className="hero-bg">
-          <img src="/hero-top.jpg" alt="" />
+          <img src="/hero-top.jpg" alt="Elephant care in Sauraha" />
         </div>
         <div className="container hero-content">
           <p className="hero-kicker">{SITE.location}</p>
@@ -155,7 +155,7 @@ export default function HomePage() {
             <CampaignProgress />
           </div>
           <div className="split-img">
-            <img src="/care-1.jpg" alt="Feeding on site" />
+            <img src="/care-1.jpg" alt="Feeding on site" loading="lazy" />
           </div>
         </div>
       </section>
