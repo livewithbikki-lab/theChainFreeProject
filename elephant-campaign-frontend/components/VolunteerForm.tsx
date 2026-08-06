@@ -19,12 +19,7 @@ export default function VolunteerForm() {
 
   const handleTypeChange = (type: 'volunteer' | 'booking') => {
     setFormType(type);
-    setFormData({
-      ...formData,
-      type,
-      date: '',
-      guests: '',
-    });
+    setFormData({ ...formData, type, date: '', guests: '' });
     setFormErrors({});
   };
 
@@ -77,32 +72,28 @@ export default function VolunteerForm() {
         if (response.status === 422 && errorData.errors) {
           setFormErrors(errorData.errors);
         } else {
-          alert(
-            'Sorry, an error occurred: ' + (errorData.message || 'Server error')
-          );
+          alert('Sorry, something went wrong. Please try again.');
         }
       }
     } catch {
-      let errorMsg =
-        'Could not connect to the server. Please verify the backend is running!';
-      if (isMissingEnv) {
-        errorMsg +=
-          '\n\n(Debugging Note: The NEXT_PUBLIC_API_URL environment variable is not defined.)';
-      }
-      alert(errorMsg);
+      alert(
+        isMissingEnv
+          ? 'Could not reach the server. API URL is not configured.'
+          : 'Could not reach the server. Please try again later.'
+      );
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const getTomorrowString = () => {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    return tomorrow.toISOString().split('T')[0];
+  const tomorrow = () => {
+    const d = new Date();
+    d.setDate(d.getDate() + 1);
+    return d.toISOString().split('T')[0];
   };
 
   return (
-    <div className="classic-form">
+    <div className="form-card">
       <div className="form-tabs">
         <button
           type="button"
@@ -116,44 +107,32 @@ export default function VolunteerForm() {
           className={formType === 'booking' ? 'active' : undefined}
           onClick={() => handleTypeChange('booking')}
         >
-          Book a visit
+          Book visit
         </button>
       </div>
 
       {formSubmitted ? (
         <div className="form-success">
           <p>
-            <strong>
-              {formType === 'volunteer'
-                ? 'You are officially part of the story.'
-                : 'Your visit request is on its way.'}
-            </strong>
-          </p>
-          <p>
-            {formType === 'volunteer'
-              ? 'Thank you for offering your time and heart. We will read your note carefully and reply soon with how we can walk this path together.'
-              : 'Thank you for choosing a kinder way to meet elephants. We will confirm availability and details with you shortly.'}
+            <strong>Thank you.</strong> We received your message and will reply
+            soon.
           </p>
           <button type="button" className="btn" onClick={() => setFormSubmitted(false)}>
-            Send another message
+            Send another
           </button>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Your name</label>
+          <label htmlFor="name">Name</label>
           <input
             id="name"
-            type="text"
             name="name"
             value={formData.name}
             onChange={handleInputChange}
             required
-            placeholder="How should we greet you?"
-            className={formErrors.name ? 'field-error' : undefined}
+            placeholder="Your name"
           />
-          {formErrors.name && (
-            <p className="error-text">{formErrors.name[0]}</p>
-          )}
+          {formErrors.name && <p className="error-text">{formErrors.name[0]}</p>}
 
           <label htmlFor="email">Email</label>
           <input
@@ -163,45 +142,32 @@ export default function VolunteerForm() {
             value={formData.email}
             onChange={handleInputChange}
             required
-            placeholder="Where can we reach you?"
-            className={formErrors.email ? 'field-error' : undefined}
+            placeholder="you@email.com"
           />
-          {formErrors.email && (
-            <p className="error-text">{formErrors.email[0]}</p>
-          )}
+          {formErrors.email && <p className="error-text">{formErrors.email[0]}</p>}
 
-          <label htmlFor="contact_handle">WhatsApp or social (optional)</label>
+          <label htmlFor="contact_handle">WhatsApp (optional)</label>
           <input
             id="contact_handle"
-            type="text"
             name="contact_handle"
             value={formData.contact_handle}
             onChange={handleInputChange}
-            placeholder="A quick way to say hello"
-            className={formErrors.contact_handle ? 'field-error' : undefined}
+            placeholder="+977 ..."
           />
-          {formErrors.contact_handle && (
-            <p className="error-text">{formErrors.contact_handle[0]}</p>
-          )}
 
           {formType === 'booking' && (
             <>
-              <label htmlFor="date">When would you love to visit?</label>
+              <label htmlFor="date">Preferred date</label>
               <input
                 id="date"
                 type="date"
                 name="date"
-                min={getTomorrowString()}
+                min={tomorrow()}
                 value={formData.date}
                 onChange={handleInputChange}
-                required={formType === 'booking'}
-                className={formErrors.date ? 'field-error' : undefined}
+                required
               />
-              {formErrors.date && (
-                <p className="error-text">{formErrors.date[0]}</p>
-              )}
-
-              <label htmlFor="guests">How many kind travellers?</label>
+              <label htmlFor="guests">Guests</label>
               <input
                 id="guests"
                 type="number"
@@ -210,44 +176,28 @@ export default function VolunteerForm() {
                 max={50}
                 value={formData.guests}
                 onChange={handleInputChange}
-                required={formType === 'booking'}
+                required
                 placeholder="2"
-                className={formErrors.guests ? 'field-error' : undefined}
               />
-              {formErrors.guests && (
-                <p className="error-text">{formErrors.guests[0]}</p>
-              )}
             </>
           )}
 
-          <label htmlFor="message">
-            {formType === 'volunteer'
-              ? 'Tell us your spark'
-              : 'Anything we should know?'}
-          </label>
+          <label htmlFor="message">Message</label>
           <textarea
             id="message"
             name="message"
+            rows={4}
             value={formData.message}
             onChange={handleInputChange}
-            rows={4}
             placeholder={
               formType === 'volunteer'
-                ? 'Skills, timing, dreams for elephants — share whatever feels true…'
-                : 'Special requests, group notes, or questions welcome…'
+                ? 'How would you like to help?'
+                : 'Any notes for your visit?'
             }
-            className={formErrors.message ? 'field-error' : undefined}
           />
-          {formErrors.message && (
-            <p className="error-text">{formErrors.message[0]}</p>
-          )}
 
           <button type="submit" className="btn" disabled={isSubmitting}>
-            {isSubmitting
-              ? 'Sending…'
-              : formType === 'volunteer'
-                ? 'I want to help'
-                : 'Request my visit'}
+            {isSubmitting ? 'Sending…' : 'Send'}
           </button>
         </form>
       )}

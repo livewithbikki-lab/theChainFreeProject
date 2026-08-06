@@ -1,71 +1,123 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { HOME_POSTS, SITE } from "@/lib/content";
+import { EXPERIENCES, SITE, VALUES } from "@/lib/content";
 import CampaignProgress from "@/components/CampaignProgress";
-import ShareButtons from "@/components/ShareButtons";
 
 export const metadata: Metadata = {
   title: "Home",
-  description: SITE.tagline,
 };
 
 export default function HomePage() {
   return (
-    <div className="home">
+    <>
       <section className="hero">
-        <div className="hero-media">
-          <img src="/elephant-1.jpg" alt="Elephant in the forest near Sauraha" />
-          <div className="hero-overlay" />
+        <div className="hero-bg">
+          <img src="/elephant-1.jpg" alt="Elephant in natural habitat" />
         </div>
-        <div className="hero-copy">
+        <div className="container hero-content">
           <p className="hero-kicker">{SITE.location}</p>
-          <h1 className="hero-title">
-            Elephants belong in the wild,
-            <span> not bound in heavy chains.</span>
-          </h1>
-          <p className="hero-text">
-            We are building a chain-free sanctuary in Sauraha — where elephants
-            walk, bathe, and rest freely, and visitors meet them with respect.
+          <h1>A refuge built on care, not chains.</h1>
+          <p>
+            The Chain Free Project is creating ride-free, chain-free elephant
+            care in Sauraha — with local mahouts, gentle visitor experiences,
+            and a clear rescue mission.
           </p>
           <div className="hero-actions">
             <Link href="/campaign" className="btn">
-              Support the rescue
+              Support rescue
             </Link>
-            <Link href="/experiences" className="btn btn-ghost">
-              See experiences
+            <Link href="/experiences" className="btn btn-outline">
+              View experiences
             </Link>
           </div>
         </div>
       </section>
 
-      <div className="home-progress">
-        <CampaignProgress />
-      </div>
-
-      <div className="post-list">
-        {HOME_POSTS.map((post) => (
-          <article key={post.href + post.title} className="post-card">
-            {post.featured && (
-              <Link href={post.href} className="post-thumb">
-                <img src={post.image} alt={post.title} />
-              </Link>
-            )}
-            <Link href={post.href} className="post-category">
-              {post.category}
+      <section className="section section-alt">
+        <div className="container split">
+          <div className="split-img">
+            <img src="/elephant-2.jpg" alt="Caring for elephants" />
+          </div>
+          <div>
+            <div className="section-head">
+              <h2>Lifelong care comes first</h2>
+              <p>
+                We pair ethical visitor experiences with real welfare goals:
+                free movement, good food, veterinary care, and dignity for the
+                people who work with elephants every day.
+              </p>
+            </div>
+            <Link href="/about" className="btn">
+              About the project
             </Link>
-            <h2 className="post-title">
-              <Link href={post.href}>{post.title}</Link>
-            </h2>
-            <p className="post-excerpt">{post.excerpt}</p>
-          </article>
-        ))}
-      </div>
+          </div>
+        </div>
+      </section>
 
-      <ShareButtons
-        path="/"
-        title={SITE.name}
-        text="Elephants belong free of chains. Join The Chain Free Project in Sauraha, Chitwan."
-      />
-    </div>
+      <section className="section" id="experiences">
+        <div className="container">
+          <div className="section-head">
+            <h2>Park experiences</h2>
+            <p>
+              Simple, regulated activities. No riding. Small groups. Elephant
+              comfort first.
+            </p>
+          </div>
+          <div className="card-grid">
+            {EXPERIENCES.map((exp) => (
+              <article key={exp.id} className="card">
+                <div className="card-img">
+                  <img src={exp.image} alt={exp.title} />
+                </div>
+                <div className="card-body">
+                  <p className="card-meta">{exp.duration}</p>
+                  <h3>{exp.title}</h3>
+                  <p>{exp.summary}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <p style={{ marginTop: "1.5rem" }}>
+            <Link href="/get-involved" className="btn">
+              Book or enquire
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="container">
+          <div className="section-head">
+            <h2>Our commitments</h2>
+          </div>
+          <div className="value-grid">
+            {VALUES.map((v) => (
+              <div key={v.title} className="value">
+                <h3>{v.title}</h3>
+                <p>{v.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container split">
+          <div>
+            <div className="section-head">
+              <h2>Elephant Rescue Fund</h2>
+              <p>
+                Help free a working tourist elephant into permanent chain-free
+                care. Every contribution supports rescue, health, and shelter.
+              </p>
+            </div>
+            <CampaignProgress />
+          </div>
+          <div className="split-img">
+            <img src="/elephant-4.jpg" alt="Rescue campaign" />
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

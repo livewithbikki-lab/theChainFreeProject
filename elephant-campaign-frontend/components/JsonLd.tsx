@@ -1,4 +1,4 @@
-import { CAMPAIGN, SITE } from "@/lib/content";
+import { SITE } from "@/lib/content";
 
 export default function JsonLd() {
   const data = {
@@ -8,20 +8,6 @@ export default function JsonLd() {
     description: SITE.tagline,
     url: SITE.url,
     areaServed: "Sauraha, Chitwan, Nepal",
-    slogan: "Elephants belong free of chains",
-    nonprofitStatus: "NonprofitType",
-    sameAs: [`https://wa.me/${SITE.whatsapp}`],
-    knowsAbout: [
-      "elephant sanctuary",
-      "ethical tourism",
-      "wildlife conservation",
-      "chain-free elephant care",
-    ],
-    seeks: {
-      "@type": "Demand",
-      name: "Elephant Rescue Fund",
-      description: `Raising ${CAMPAIGN.goalNpr} NPR to liberate a working tourist elephant.`,
-    },
   };
 
   return (

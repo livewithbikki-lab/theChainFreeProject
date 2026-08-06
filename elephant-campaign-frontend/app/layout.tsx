@@ -1,74 +1,49 @@
 import type { Metadata, Viewport } from "next";
-import { Lato } from "next/font/google";
+import { DM_Sans, Fraunces } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/lib/content";
 import JsonLd from "@/components/JsonLd";
 
-const lato = Lato({
-  variable: "--font-lato",
+const body = DM_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const display = Fraunces({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "The Chain Free Project | Ethical Elephant Conservation",
-    template: "%s | The Chain Free Project",
+    default: `${SITE.name} | Sauraha, Chitwan`,
+    template: `%s | ${SITE.name}`,
   },
   description:
-    "Join The Chain Free Project in Sauraha, Chitwan — rescuing working elephants, ending chains and saddles, and building a kinder future with local mahouts.",
-  keywords: [
-    "elephant sanctuary",
-    "nepal",
-    "ethical tourism",
-    "chain free",
-    "wildlife conservation",
-    "volunteer",
-    "sauraha",
-    "chitwan",
-    "ride free elephant",
-  ],
-  authors: [{ name: SITE.name }],
+    "Chain-free, ride-free elephant care in Sauraha, Chitwan, Nepal. Support rescue, visit kindly, volunteer with us.",
   openGraph: {
     type: "website",
-    locale: "en_NP",
     url: SITE.url,
     siteName: SITE.name,
-    title: "The Chain Free Project",
-    description:
-      "Elephants belong free of chains. Help build a ride-free sanctuary in Sauraha, Chitwan, Nepal.",
-    images: [
-      {
-        url: "/elephant-1.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Elephant in natural habitat — The Chain Free Project",
-      },
-    ],
+    title: SITE.name,
+    description: SITE.tagline,
+    images: [{ url: "/elephant-1.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Chain Free Project",
-    description:
-      "Help free working elephants from chains and saddles in Sauraha, Chitwan.",
+    title: SITE.name,
+    description: SITE.tagline,
     images: ["/elephant-1.jpg"],
-  },
-  alternates: {
-    canonical: SITE.url,
-  },
-  robots: {
-    index: true,
-    follow: true,
   },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 5,
-  viewportFit: "cover",
-  themeColor: "#000000",
+  themeColor: "#1e3d1a",
 };
 
 export default function RootLayout({
@@ -77,8 +52,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${lato.variable} h-full`}>
-      <body className="min-h-full font-sans antialiased">
+    <html lang="en" className={`${body.variable} ${display.variable}`}>
+      <body>
         <JsonLd />
         {children}
       </body>
