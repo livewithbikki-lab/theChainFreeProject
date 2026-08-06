@@ -5,6 +5,7 @@ import {
   HOME_STRIP,
   MISSION_PILLARS,
   PHOTOS,
+  PROBLEM_PHOTOS,
   SITE,
   VALUES,
 } from "@/lib/content";
@@ -42,7 +43,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="photo-strip" aria-label="Photos from Sauraha">
+      <section className="photo-strip" aria-label="Photos from care work">
         <div className="photo-strip-track">
           {HOME_STRIP.map((src) => (
             <div key={src} className="photo-strip-item">
@@ -53,27 +54,36 @@ export default function HomePage() {
       </section>
 
       <section className="section section-alt">
-        <div className="container split">
-          <div className="split-img">
-            <img src={PHOTOS.problem} alt="Elephant eating fresh greens" />
+        <div className="container">
+          <div className="section-head">
+            <h2>The problem we see</h2>
+            <p>
+              In Sauraha, many elephants used for tourism still spend long hours
+              under saddles. Between rides they are often kept on chains. Guests
+              get a photo. The elephant gets a hard day.
+            </p>
           </div>
-          <div>
-            <div className="section-head">
-              <h2>The problem we see</h2>
-              <p>
-                In Sauraha, many elephants used for tourism still spend long
-                hours under saddles. Between rides they are often kept on chains.
-                Guests get a photo. The elephant gets a hard day.
-              </p>
-              <p>
-                We think tourism can work differently. People can still meet
-                elephants. Mahouts can still earn a living. The animal does not
-                have to carry anyone or stand locked in place all afternoon.
-              </p>
-            </div>
-            <Link href="/about" className="btn">
-              Read more about our work
-            </Link>
+
+          <div className="problem-grid">
+            {PROBLEM_PHOTOS.map((p) => (
+              <figure key={p.src} className="problem-card">
+                <img src={p.src} alt={p.label} />
+                <figcaption>{p.label}</figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div className="section-head" style={{ marginTop: "1.75rem" }}>
+            <p>
+              We think tourism can work differently. People can still meet
+              elephants. Mahouts can still earn a living. The animal does not
+              have to carry anyone or stand locked in place all afternoon.
+            </p>
+            <p style={{ marginTop: "1rem" }}>
+              <Link href="/about" className="btn">
+                Read more about our work
+              </Link>
+            </p>
           </div>
         </div>
       </section>
@@ -132,26 +142,6 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2>A short clip from Sauraha</h2>
-            <p>Real place. Real elephants. No filter pack.</p>
-          </div>
-          <div className="video-frame">
-            <video
-              controls
-              playsInline
-              preload="metadata"
-              poster={PHOTOS.about}
-            >
-              <source src={PHOTOS.video} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-alt">
-        <div className="container">
-          <div className="section-head">
             <h2>Our rules</h2>
             <p>We try to hold ourselves to these every day.</p>
           </div>
@@ -166,7 +156,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section-alt">
         <div className="container split">
           <div>
             <div className="section-head">
@@ -184,36 +174,36 @@ export default function HomePage() {
             <CampaignProgress />
           </div>
           <div className="split-img">
-            <img src={PHOTOS.campaign} alt="People with an elephant on site" />
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-alt">
-        <div className="container">
-          <div className="section-head">
-            <h2>From the field</h2>
-            <p>
-              A few more shots.{" "}
-              <Link href="/gallery">Open the full gallery</Link>
-            </p>
-          </div>
-          <div className="mosaic">
-            <div className="mosaic-large">
-              <img src="/elephant-6.jpg" alt="Elephant close up" />
-            </div>
-            <div className="mosaic-stack">
-              <img src="/elephant-2.jpg" alt="Feeding" />
-              <img src="/elephant-11.jpg" alt="On site" />
-            </div>
-            <div className="mosaic-wide">
-              <img src="/elephant-1.jpg" alt="River" />
-            </div>
+            <img src={PHOTOS.campaign} alt="Feeding and care on site" />
           </div>
         </div>
       </section>
 
       <section className="section">
+        <div className="container">
+          <div className="section-head">
+            <h2>Better days look like this</h2>
+            <p>
+              Care, food, and calm time — not saddles.{" "}
+              <Link href="/gallery">Full gallery</Link>
+            </p>
+          </div>
+          <div className="mosaic">
+            <div className="mosaic-large">
+              <img src="/care-4.jpg" alt="Elephant with people nearby" />
+            </div>
+            <div className="mosaic-stack">
+              <img src="/care-1.jpg" alt="Feeding" />
+              <img src="/care-2.jpg" alt="Fresh fodder" />
+            </div>
+            <div className="mosaic-wide">
+              <img src="/hero.jpg" alt="River" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt">
         <div
           className="container"
           style={{ textAlign: "center", maxWidth: "36rem" }}
@@ -223,7 +213,7 @@ export default function HomePage() {
           </h2>
           <p>
             You can visit, volunteer, donate toward the rescue, or share this
-            page. Even a short message on WhatsApp or WeChat is useful.
+            page. WhatsApp or WeChat — both work.
           </p>
           <p style={{ marginTop: "1.25rem" }}>
             <Link href="/get-involved" className="btn">

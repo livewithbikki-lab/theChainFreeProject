@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MISSION_PILLARS, PHOTOS, VALUES } from "@/lib/content";
+import { MISSION_PILLARS, PHOTOS, PROBLEM_PHOTOS, VALUES } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -24,7 +24,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="split" style={{ marginBottom: "2.5rem" }}>
             <div className="split-img">
-              <img src={PHOTOS.about} alt="Elephant face close up" />
+              <img src={PHOTOS.about} alt="Elephant with visitors nearby" />
             </div>
             <div className="prose">
               <p>
@@ -48,6 +48,19 @@ export default function AboutPage() {
             </div>
           </div>
 
+          <div className="section-head">
+            <h2>What we are pushing against</h2>
+            <p>Tourist riding is still common. These photos show that reality.</p>
+          </div>
+          <div className="problem-grid" style={{ marginBottom: "2.5rem" }}>
+            {PROBLEM_PHOTOS.map((p) => (
+              <figure key={p.src} className="problem-card">
+                <img src={p.src} alt={p.label} />
+                <figcaption>{p.label}</figcaption>
+              </figure>
+            ))}
+          </div>
+
           <div className="prose" style={{ maxWidth: "100%" }}>
             <h2>What we are trying to build</h2>
             <p>
@@ -68,10 +81,10 @@ export default function AboutPage() {
 
             <div className="split" style={{ margin: "2rem 0" }}>
               <div className="split-img">
-                <img src={PHOTOS.feed} alt="Feeding an elephant by hand" />
+                <img src={PHOTOS.feed} alt="Feeding an elephant" />
               </div>
               <div className="split-img">
-                <img src={PHOTOS.problem} alt="Elephant with fresh fodder" />
+                <img src="/care-2.jpg" alt="Elephant with fresh fodder" />
               </div>
             </div>
 
@@ -89,8 +102,8 @@ export default function AboutPage() {
             <p>
               A small team with local partners and mahouts. We grow through
               volunteers, visitors who choose ride-free options, and people who
-              support the rescue fund. If you want updates or a walk through of
-              the plan, contact us and we will talk straight with you.
+              support the rescue fund. Contact us if you want a straight answer
+              about the plan.
             </p>
 
             <p>

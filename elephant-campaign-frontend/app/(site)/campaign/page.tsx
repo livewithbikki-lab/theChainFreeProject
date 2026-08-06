@@ -31,14 +31,12 @@ export default function CampaignPage() {
                 and wages for the people looking after her.
               </p>
               <p>
-                That is what this fund is for. We are not asking for money to
-                “raise awareness” in the abstract. We are trying to free one
-                animal from riding and keep her off chains for good.
+                That is what this fund is for. We are trying to free one animal
+                from riding and keep her off chains for good.
               </p>
               <p>
                 <strong>Status:</strong> {CAMPAIGN.elephantLabel}. We will post
-                clearer details when the paperwork is ready. Until then we are
-                still collecting support so we can move when the time comes.
+                clearer details when the paperwork is ready.
               </p>
 
               <h2>Where the money goes</h2>
@@ -53,8 +51,7 @@ export default function CampaignPage() {
               <h2>If you want to give</h2>
               <p>
                 Message us on WhatsApp or WeChat, or use the contact form. We
-                will tell you how to send support and answer questions about the
-                campaign.
+                will tell you how to send support.
               </p>
 
               <p>
@@ -73,10 +70,7 @@ export default function CampaignPage() {
             </div>
             <div>
               <div className="split-img" style={{ marginBottom: "1.25rem" }}>
-                <img
-                  src={PHOTOS.campaign}
-                  alt="People spending time with an elephant"
-                />
+                <img src={PHOTOS.campaign} alt="Care and feeding on site" />
               </div>
               <CampaignProgress />
             </div>

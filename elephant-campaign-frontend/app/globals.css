@@ -497,20 +497,33 @@ p {
   overflow: hidden;
 }
 
-/* Video */
-.video-frame {
-  border-radius: 16px;
-  overflow: hidden;
-  background: #111;
-  border: 1px solid var(--line);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+/* Problem photos (saddle / riding reality) */
+.problem-grid {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: 1fr;
 }
 
-.video-frame video {
-  display: block;
+.problem-card {
+  margin: 0;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.problem-card img {
   width: 100%;
-  max-height: 70vh;
-  background: #000;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  filter: saturate(0.92);
+}
+
+.problem-card figcaption {
+  padding: 0.7rem 0.9rem 0.85rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  border-top: 3px solid #8b3a2a;
 }
 
 /* Page hero (inner) */
@@ -914,6 +927,10 @@ p {
 
   .photo-strip-item {
     aspect-ratio: 5 / 4;
+  }
+
+  .problem-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .gallery-mosaic {

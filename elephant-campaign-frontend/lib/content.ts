@@ -32,17 +32,18 @@ export const CAMPAIGN = {
   elephantLabel: "Rescue candidate (details soon)",
 };
 
-/** Best photo for each use */
+/** Care photos = free / on-site work. Saddle photos = problem only. */
 export const PHOTOS = {
-  hero: "/elephant-1.jpg", // river
-  problem: "/elephant-3.jpg", // eating greens
-  about: "/elephant-6.jpg", // face portrait
-  campaign: "/elephant-5.jpg", // with people
-  feed: "/elephant-2.jpg", // trunk feeding
-  walk: "/elephant-4.jpg",
-  river: "/elephant-1.jpg",
-  volunteer: "/elephant-5.jpg",
-  video: "/sauraha-clip.mp4",
+  hero: "/hero.jpg",
+  problem: "/saddle-1.jpg",
+  problemB: "/saddle-2.jpg",
+  problemC: "/saddle-3.jpg",
+  about: "/care-4.jpg",
+  campaign: "/care-1.jpg",
+  feed: "/care-1.jpg",
+  walk: "/care-3.jpg",
+  river: "/hero.jpg",
+  volunteer: "/care-4.jpg",
 } as const;
 
 export const EXPERIENCES = [
@@ -80,31 +81,36 @@ export const EXPERIENCES = [
   },
 ] as const;
 
+/** Positive gallery — no saddle shots */
 export const GALLERY_ITEMS = [
-  { src: "/elephant-1.jpg", title: "River time", caption: "Cool water, no rush.", wide: true },
-  { src: "/elephant-2.jpg", title: "Feeding", caption: "Trunk and trust.", wide: false },
-  { src: "/elephant-6.jpg", title: "Close up", caption: "Looking back at us.", wide: false },
-  { src: "/elephant-3.jpg", title: "Fresh greens", caption: "Daily food, ordinary care.", wide: false },
-  { src: "/elephant-4.jpg", title: "On site", caption: "Eating in peace.", wide: false },
-  { src: "/elephant-5.jpg", title: "With people", caption: "Guests and mahouts nearby.", wide: true },
-  { src: "/elephant-7.jpg", title: "Sauraha days", caption: "From our work here.", wide: false },
-  { src: "/elephant-8.jpg", title: "Care routine", caption: "Hands-on help.", wide: false },
-  { src: "/elephant-9.jpg", title: "Around the shelter", caption: "Real place, real animals.", wide: false },
-  { src: "/elephant-10.jpg", title: "Afternoon light", caption: "Quiet hours.", wide: false },
-  { src: "/elephant-11.jpg", title: "Together", caption: "Herd and handlers.", wide: true },
-  { src: "/elephant-12.jpg", title: "Open ground", caption: "Room to move.", wide: false },
-  { src: "/elephant-13.jpg", title: "Field notes", caption: "Work in progress.", wide: false },
-  { src: "/elephant-14.jpg", title: "Details", caption: "Skin, dust, sun.", wide: false },
-  { src: "/elephant-15.jpg", title: "Home ground", caption: "Where this project lives.", wide: false },
+  { src: "/hero.jpg", title: "River time", caption: "Cool water, no rush.", wide: true },
+  { src: "/care-1.jpg", title: "Feeding", caption: "Trunk and trust.", wide: false },
+  { src: "/care-2.jpg", title: "Fresh greens", caption: "Daily food.", wide: false },
+  { src: "/care-3.jpg", title: "On site", caption: "Eating in peace.", wide: false },
+  { src: "/care-4.jpg", title: "With people", caption: "Calm, close encounters.", wide: false },
+  { src: "/care-5.jpg", title: "Sauraha days", caption: "From our work here.", wide: true },
+  { src: "/care-6.jpg", title: "Afternoon", caption: "Ordinary hours.", wide: false },
+  { src: "/care-7.jpg", title: "Together", caption: "Herd and handlers.", wide: false },
+  { src: "/care-8.jpg", title: "Open ground", caption: "Room to move.", wide: false },
+  { src: "/care-9.jpg", title: "Field work", caption: "Hands-on care.", wide: false },
+  { src: "/care-10.jpg", title: "Details", caption: "Skin, dust, sun.", wide: false },
+  { src: "/care-11.jpg", title: "Home ground", caption: "Where this project lives.", wide: false },
+] as const;
+
+/** Shown only in the “problem” section */
+export const PROBLEM_PHOTOS = [
+  { src: "/saddle-1.jpg", label: "Still common in tourist riding work" },
+  { src: "/saddle-2.jpg", label: "Heavy use for visitor rides" },
+  { src: "/saddle-3.jpg", label: "This is what we want to change" },
 ] as const;
 
 export const HOME_STRIP = [
-  "/elephant-2.jpg",
-  "/elephant-6.jpg",
-  "/elephant-3.jpg",
-  "/elephant-5.jpg",
-  "/elephant-4.jpg",
-  "/elephant-1.jpg",
+  "/care-1.jpg",
+  "/care-2.jpg",
+  "/care-3.jpg",
+  "/care-4.jpg",
+  "/care-5.jpg",
+  "/hero.jpg",
 ] as const;
 
 export const VALUES = [
