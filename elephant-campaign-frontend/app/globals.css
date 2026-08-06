@@ -42,6 +42,23 @@ img {
   display: block;
 }
 
+/* Shared media frame — keeps any photo inside the box */
+.media-frame {
+  position: relative;
+  overflow: hidden;
+  background: #d8d2c8;
+}
+
+.media-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center center;
+}
+
 a {
   color: var(--green);
   text-decoration: none;
@@ -215,12 +232,16 @@ p {
 .hero-bg {
   position: absolute;
   inset: 0;
+  overflow: hidden;
+  background: #1a1a1a;
 }
 
 .hero-bg img {
   width: 100%;
   height: 100%;
+  max-width: none;
   object-fit: cover;
+  object-position: center 40%;
 }
 
 .hero-bg::after {
@@ -233,6 +254,7 @@ p {
     rgba(0, 0, 0, 0.55) 55%,
     rgba(0, 0, 0, 0.75) 100%
   );
+  pointer-events: none;
 }
 
 .hero-content {
@@ -308,15 +330,20 @@ p {
 }
 
 .card-img {
-  aspect-ratio: 16 / 10;
+  position: relative;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #ddd;
+  background: #d8d2c8;
 }
 
 .card-img img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
+  max-width: none;
   object-fit: cover;
+  object-position: center center;
 }
 
 .card-body {
@@ -404,25 +431,36 @@ p {
 /* Gallery mosaic */
 .gallery-mosaic {
   display: grid;
-  gap: 0.85rem;
+  gap: 1rem;
   grid-template-columns: 1fr;
 }
 
 .gallery-mosaic figure {
   margin: 0;
   background: transparent;
+  min-width: 0;
 }
 
-.gallery-mosaic img {
-  width: 100%;
+.gallery-mosaic .gallery-frame {
+  position: relative;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  overflow: hidden;
   border-radius: 14px;
-  background: #ddd;
+  background: #d8d2c8;
 }
 
-.gallery-mosaic .is-wide img {
+.gallery-mosaic .is-wide .gallery-frame {
   aspect-ratio: 16 / 10;
+}
+
+.gallery-mosaic .gallery-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .gallery-mosaic figcaption {
@@ -451,14 +489,20 @@ p {
 }
 
 .photo-strip-item {
+  position: relative;
   aspect-ratio: 1;
   overflow: hidden;
+  background: #d8d2c8;
 }
 
 .photo-strip-item img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
+  max-width: none;
   object-fit: cover;
+  object-position: center center;
 }
 
 /* Home mosaic */
@@ -468,17 +512,17 @@ p {
   grid-template-columns: 1fr;
 }
 
-.mosaic img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.mosaic-large,
+.mosaic-stack > *,
+.mosaic-wide {
+  position: relative;
+  overflow: hidden;
   border-radius: 14px;
-  background: #ddd;
+  background: #d8d2c8;
 }
 
 .mosaic-large {
   aspect-ratio: 4 / 3;
-  overflow: hidden;
 }
 
 .mosaic-stack {
@@ -489,12 +533,20 @@ p {
 
 .mosaic-stack > * {
   aspect-ratio: 1;
-  overflow: hidden;
 }
 
 .mosaic-wide {
   aspect-ratio: 16 / 9;
-  overflow: hidden;
+}
+
+.mosaic img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center center;
 }
 
 /* Problem photos: ride = carrying people, chain = chained in habitat */
@@ -510,19 +562,49 @@ p {
   border: 1px solid var(--line);
   border-radius: 14px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
-.problem-card img {
+.problem-card .problem-media {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: #2a2420;
+  flex: 0 0 auto;
+}
+
+.problem-card .problem-media img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
+  max-width: none;
   object-fit: cover;
-  filter: saturate(0.9);
+  object-position: center center;
+  filter: saturate(0.92);
+}
+
+/* Ride scenes are often wider — keep subjects centered */
+.problem-ride .problem-media {
+  aspect-ratio: 16 / 10;
+}
+
+.problem-ride .problem-media img {
+  object-position: center 45%;
+}
+
+.problem-chain .problem-media img {
+  object-position: center center;
 }
 
 .problem-card figcaption {
   padding: 0.7rem 0.9rem 0.85rem;
   font-size: 0.88rem;
   color: var(--muted);
+  line-height: 1.35;
+  flex: 1 1 auto;
 }
 
 .problem-ride figcaption {
@@ -531,6 +613,26 @@ p {
 
 .problem-chain figcaption {
   border-top: 3px solid #6b5a3e;
+}
+
+/* Split images */
+.split-img {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #d8d2c8;
+  min-width: 0;
+}
+
+.split-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center center;
 }
 
 /* Page hero (inner) */
@@ -898,19 +1000,6 @@ p {
   align-items: center;
 }
 
-.split-img {
-  border-radius: 16px;
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-  background: #ddd;
-}
-
-.split-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 @media (min-width: 768px) {
   .nav-desktop {
     display: flex;
@@ -1003,9 +1092,8 @@ p {
     grid-column: span 2;
   }
 
-  .gallery-mosaic .is-wide img {
+  .gallery-mosaic .is-wide .gallery-frame {
     aspect-ratio: 16 / 9;
-    max-height: 380px;
-    width: 100%;
+    max-height: 420px;
   }
 }

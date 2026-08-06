@@ -26,7 +26,9 @@ export default function GalleryPage() {
                 key={item.src}
                 className={item.wide ? "is-wide" : undefined}
               >
-                <img src={item.src} alt={item.title} loading="lazy" />
+                <div className="gallery-frame">
+                  <img src={item.src} alt={item.title} loading="lazy" />
+                </div>
                 <figcaption>
                   <strong>{item.title}</strong>
                   {item.caption ? ` — ${item.caption}` : ""}

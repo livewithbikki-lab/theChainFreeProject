@@ -70,7 +70,9 @@ export default function HomePage() {
                 key={p.src}
                 className={`problem-card problem-${p.kind}`}
               >
-                <img src={p.src} alt={p.label} />
+                <div className="problem-media">
+                  <img src={p.src} alt={p.label} />
+                </div>
                 <figcaption>{p.label}</figcaption>
               </figure>
             ))}
