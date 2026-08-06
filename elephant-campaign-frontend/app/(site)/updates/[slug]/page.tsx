@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ShareButtons from "@/components/ShareButtons";
 import { UPDATES, getUpdate } from "@/lib/content";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -56,6 +57,12 @@ export default async function UpdatePostPage({ params }: Props) {
           {" · "}
           <Link href="/get-involved">Get involved</Link>
         </p>
+
+        <ShareButtons
+          path={`/updates/${post.slug}`}
+          title={post.title}
+          text={post.excerpt}
+        />
       </div>
     </article>
   );

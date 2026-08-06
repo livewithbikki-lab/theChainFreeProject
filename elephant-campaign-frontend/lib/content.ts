@@ -17,6 +17,8 @@ export const NAV_ITEMS = [
   { href: "/campaign", label: "Campaign" },
   { href: "/experiences", label: "Experiences" },
   { href: "/updates", label: "Updates" },
+  { href: "/team", label: "Team" },
+  { href: "/transparency", label: "Transparency" },
   { href: "/gallery", label: "Gallery" },
   { href: "/get-involved", label: "Get involved" },
 ] as const;
@@ -28,22 +30,104 @@ export const CAMPAIGN = {
   elephantLabel: "Upcoming rescue candidate",
 };
 
+/** Planned use of every rescue-fund rupee (percentages should total 100). */
+export const BUDGET_BREAKDOWN = [
+  {
+    label: "Elephant acquisition / release",
+    percent: 45,
+    detail:
+      "Fair negotiation to free a working tourist elephant from commercial riding work.",
+  },
+  {
+    label: "Veterinary care & rehabilitation",
+    percent: 20,
+    detail:
+      "Health checks, treatment, foot care, nutrition plans, and recovery support.",
+  },
+  {
+    label: "Shelter, fodder & daily care",
+    percent: 18,
+    detail:
+      "Chain-free shelter upkeep, food, forest access, and essentials for daily welfare.",
+  },
+  {
+    label: "Mahout livelihoods & training",
+    percent: 12,
+    detail:
+      "Fair wages and positive-reinforcement training so care replaces force.",
+  },
+  {
+    label: "Community education & ops",
+    percent: 5,
+    detail:
+      "Local outreach, ride-free advocacy, and transparent campaign operations.",
+  },
+] as const;
+
+export const TEAM = [
+  {
+    name: "Campaign core team",
+    role: "Coordination & sanctuary vision",
+    image: "/elephant-4.jpg",
+    bio: "A small group of conservation advocates in Sauraha working to replace chains and saddles with ethical, observant tourism and permanent sanctuary care.",
+  },
+  {
+    name: "Local mahout partners",
+    role: "Daily guardianship",
+    image: "/elephant-5.jpg",
+    bio: "Experienced elephant handlers learning and practising cooperative, positive-reinforcement care — skilled work rooted in trust, not control.",
+  },
+  {
+    name: "Community volunteers",
+    role: "Hands, hearts & outreach",
+    image: "/elephant-2.jpg",
+    bio: "Visitors and neighbours who help with fodder, shelter care, education, and spreading the ride-free message across Chitwan.",
+  },
+] as const;
+
+export const PARTNERS = [
+  {
+    name: "Sauraha community partners",
+    type: "Local",
+    detail:
+      "Guides, lodges, and neighbours open to a kinder tourism model that still supports livelihoods.",
+  },
+  {
+    name: "Veterinary collaborators",
+    type: "Care",
+    detail:
+      "Animal-health professionals who advise on rescue readiness, treatment, and long-term welfare.",
+  },
+  {
+    name: "Ethical travel advocates",
+    type: "Outreach",
+    detail:
+      "Travellers and storytellers who choose observation over riding — and invite others to do the same.",
+  },
+  {
+    name: "You",
+    type: "Supporter",
+    detail:
+      "Every share, visit, volunteer day, and contribution makes chain-free care possible. Partners are not only organisations — they are people who care.",
+  },
+] as const;
+
 export const RECENT_ACTIVITIES = [
   {
-    href: "/updates/why-chains-must-end",
-    title: "Field note: why chains must end in Sauraha",
+    href: "/transparency",
+    title: "Transparency: where every rescue rupee goes",
+  },
+  {
+    href: "/team",
+    title: "Meet the team, mahouts & partners",
   },
   {
     href: "/campaign",
     title: "Rescue fund open — every gift brings freedom closer",
   },
   {
-    href: "/experiences",
-    title: "Ride-free experiences now open for booking",
-  },
-  {
-    href: "/gallery",
-    title: "Morning light, river baths, and quiet forest walks",
+    href: "/updates/why-chains-must-end",
+    title: "Field note: why chains must end in Sauraha",
   },
   {
     href: "/get-involved",

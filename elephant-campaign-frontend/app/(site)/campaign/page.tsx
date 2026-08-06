@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CampaignProgress from "@/components/CampaignProgress";
+import ShareButtons from "@/components/ShareButtons";
 import { CAMPAIGN, WHATSAPP_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -92,6 +93,18 @@ export default function CampaignPage() {
           larger than words, this is your invitation. Be part of the day a chain
           comes off for good.
         </p>
+
+        <p>
+          Want the full money trail? Read our{' '}
+          <Link href="/transparency">transparency page</Link>. Meet the{' '}
+          <Link href="/team">team &amp; partners</Link>.
+        </p>
+
+        <ShareButtons
+          path="/campaign"
+          title="Elephant Rescue Fund — The Chain Free Project"
+          text="Help free a working tourist elephant in Sauraha. 100% toward rescue & care."
+        />
       </div>
     </article>
   );

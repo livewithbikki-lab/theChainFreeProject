@@ -9,6 +9,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/campaign",
     "/experiences",
     "/updates",
+    "/team",
+    "/transparency",
     "/gallery",
     "/get-involved",
   ].map((path) => ({

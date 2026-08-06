@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { HOME_POSTS, SITE } from "@/lib/content";
 import CampaignProgress from "@/components/CampaignProgress";
+import ShareButtons from "@/components/ShareButtons";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -59,6 +60,12 @@ export default function HomePage() {
           </article>
         ))}
       </div>
+
+      <ShareButtons
+        path="/"
+        title={SITE.name}
+        text="Elephants belong free of chains. Join The Chain Free Project in Sauraha, Chitwan."
+      />
     </div>
   );
 }
