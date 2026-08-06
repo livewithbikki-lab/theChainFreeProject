@@ -606,23 +606,40 @@ p {
   font-size: 0.85rem;
 }
 
-/* Contact channels (page) */
-.contact-channels {
-  display: grid;
-  gap: 0.75rem;
+/* Contact picker (page) — both options, one place */
+.chat-picker {
   margin: 1.25rem 0 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+  overflow: hidden;
 }
 
-.channel-card {
+.chat-picker-label {
+  margin: 0 !important;
+  padding: 0.75rem 1rem 0.35rem;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted) !important;
+}
+
+.chat-picker-options {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.chat-pick {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.2rem;
+  gap: 0.15rem;
+  padding: 0.9rem 1rem 1rem;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: transparent;
   text-align: left;
-  padding: 1rem 1.1rem;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  background: var(--white);
   font-family: inherit;
   cursor: pointer;
   text-decoration: none !important;
@@ -630,31 +647,32 @@ p {
   width: 100%;
 }
 
-.channel-card strong {
+.chat-pick-name {
+  font-weight: 700;
   font-size: 1rem;
   color: var(--ink);
 }
 
-.channel-card > span:nth-of-type(1) {
-  font-size: 0.95rem;
+.chat-pick-id {
+  font-size: 0.92rem;
   color: var(--ink);
   word-break: break-all;
 }
 
-.channel-hint {
-  font-size: 0.8rem !important;
-  color: var(--muted) !important;
+.chat-pick-note {
+  font-size: 0.8rem;
+  color: var(--muted);
 }
 
-.channel-wa {
+.chat-pick-wa {
   border-left: 4px solid #25d366;
 }
 
-.channel-wx {
+.chat-pick-wx {
   border-left: 4px solid #09b83e;
 }
 
-.channel-card:hover {
+.chat-pick:hover {
   background: var(--sand);
 }
 
@@ -662,7 +680,7 @@ p {
   line-height: 1.7;
 }
 
-/* Floating WhatsApp + WeChat */
+/* One floating chat button → two options */
 .contact-float {
   position: fixed;
   right: 1rem;
@@ -670,58 +688,116 @@ p {
   z-index: 40;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
   align-items: flex-end;
+  gap: 0.65rem;
 }
 
 .float-btn {
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   border: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
   cursor: pointer;
-  text-decoration: none !important;
   font-family: inherit;
   padding: 0;
+  background: var(--green);
 }
 
-.float-wa {
+.float-btn:hover,
+.float-btn.is-open {
+  background: var(--green-dark);
+  color: #fff !important;
+}
+
+.chat-menu {
+  width: min(260px, calc(100vw - 2rem));
+  background: var(--white);
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.chat-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.85rem 0.95rem;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.chat-option:last-child {
+  border-bottom: 0;
+}
+
+.chat-option:hover {
+  background: var(--sand);
+}
+
+.chat-option-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.chat-option-wa .chat-option-icon {
   background: #25d366;
 }
 
-.float-wa:hover {
-  background: #1ebe57;
-  color: #fff !important;
-}
-
-.float-wx {
+.chat-option-wx .chat-option-icon {
   background: #09b83e;
 }
 
-.float-wx:hover {
-  background: #078f30;
-  color: #fff !important;
+.chat-option-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
 }
 
-.float-wx-icon {
-  font-size: 1.15rem;
-  font-weight: 700;
-  line-height: 1;
+.chat-option-text strong {
+  font-size: 0.92rem;
+  color: var(--ink);
 }
 
-.float-toast {
-  background: var(--ink);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.4rem 0.65rem;
-  border-radius: 8px;
-  white-space: nowrap;
+.chat-option-text small {
+  font-size: 0.78rem;
+  color: var(--muted);
+  word-break: break-all;
+}
+
+@media (min-width: 480px) {
+  .chat-picker-options {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .chat-pick {
+    border-top: 0;
+  }
+
+  .chat-pick-wa {
+    border-right: 1px solid var(--line);
+  }
 }
 
 /* Split block */

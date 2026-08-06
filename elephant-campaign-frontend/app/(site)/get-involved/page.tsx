@@ -23,13 +23,8 @@ export default function GetInvolvedPage() {
         <div className="container split">
           <div className="prose">
             <p>
-              Use the form for longer messages, or chat with us directly.
+              Use the form for longer messages, or pick a chat option below.
               Include dates if you want to visit.
-            </p>
-            <p>
-              <strong>WhatsApp</strong> for most guests.{" "}
-              <strong>WeChat (微信)</strong> if you are in China or prefer
-              WeChat — different number from WhatsApp.
             </p>
             <ContactChannels />
             <p style={{ marginTop: "1.25rem" }}>
